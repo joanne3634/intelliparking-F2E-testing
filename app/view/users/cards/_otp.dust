@@ -1,0 +1,14 @@
+<form method="post" action="/-/cc">
+    <div class="errorMsg">{error}</div>
+    {#token}<input type="hidden" name="token" value="{token}">{/token}
+    {#cctoken}<input type="hidden" name="cctoken" value="{cctoken}">{/cctoken}
+    <div class="list list-inset">
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="fa fa-phone-square fa-fw icon placeholder-icon"></i>
+                <input type="tel" name="answer" maxlength="11" placeholder="手机验证码" id="otpAnswer">
+            </label>
+            <button type="submit" id="otpAnswer" class="button button-small button-positive item-button-right">提交(30分钟内有效)</button>
+        </div>
+    </div>
+</form>

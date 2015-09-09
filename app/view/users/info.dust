@@ -1,0 +1,68 @@
+{>"common/mobile-v3.layout.dust"/}
+{<title}十三点-我的资料{/title}
+{<styles}
+<script>
+$script(['{@static src="/users/info/main.scss.js"/}'])
+</script>
+{/styles}
+{<content}
+<div class="content info firstContainer">
+    <div class="padding-top list">
+        <a class="item item-thumbnail-left" href="#">
+            {?euser.provider.data.headimgurl}
+                <img src="{euser.provider.data.headimgurl}" alt="{euser.provider.data.nickname}"/>
+            {:else}
+                <img src="{@static src="images/nopic.jpg"/}" alt="没有头像"/>
+            {/euser.provider.data.headimgurl}
+        </a>
+        <a class="item item-icon-left" href="#">
+            <i class="icon fa fa-user"></i>
+            姓名
+            <span class="item-note">{euser.name}</span>
+        </a>
+        <a class="item item-icon-left" href="#">
+            <i class="icon fa fa-phone-square"></i>
+            手机
+            <span class="item-note">{euser.mobile}</span>
+        </a>
+        <a class="item item-icon-left" href="{?dian13user.bankCard}#{:else}{@route route="/-/cc/new"/}{/dian13user.bankCard}">
+            <i class="icon fa fa-credit-card"></i>
+            信用卡
+            {?dian13user.bankCard}
+            <span class="item-note">{dian13user.bankCard}</span>
+            {:else}
+            <em class="item-note">卡验证</em>
+            {/dian13user.bankCard}
+
+        </a>
+        <a id="switch-item-area" class="item item-icon-left" href="#switch-area" data-toggle="modal">
+            <i class="icon fa fa-map-marker"></i>
+            地区
+            <span class="item-note">{euser.areaName}</span>
+        </a>
+    </div>
+    <div class="padding-top list">
+        <a class="item item-icon-left" href="{@route route="/shops"/}">
+            <i class="icon fa fa-shopping-cart"></i>
+            哪里消费
+        </a>
+        <a class="item item-icon-left" href="{@route route="/users/rebates"/}">
+            <i class="icon fa fa-money"></i>
+            我的返现
+        </a>
+        <a class="item item-icon-left" href="{@route route="/faq"/}">
+            <i class="icon fa fa-question"></i>
+            帮助信息
+        </a>
+    </div>
+</div>
+<div id="switch-area" class="modal-backdrop">
+    <div class="modal-backdrop-bg"></div>
+    <div class="modal-wrapper">
+        <div class="modal"></div>
+    </div>
+</div>
+{/content}
+{<js}
+    <script src="{@static src="/users/info/main.js"/}"></script>
+{/js}

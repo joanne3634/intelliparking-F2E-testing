@@ -1,0 +1,90 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+    inquirer = require('inquirer'),
+    readYaml = require('read-yaml');
+var env = (process.env.NODE_ENV || "development").toLowerCase();
+var config = readYaml.sync(require('path').resolve('./config/wechat.yml'))[env];
+var wechatAPI = require('wechat-api');
+if ( !config ) { throw `./config/wechat.yml#[${env}] is required`}
+program
+    .version('0.0.1')
+    .command('menu')
+    .action(function(){
+        require('inquirer').prompt([
+            {name: 'baseurl', message: 'baseurl', required: true},
+            {name: 'withLogout', message: 'with logout'}
+        ], function(answers) {
+            api = new wechatAPI(config.appId, config.appSecret);
+            var baseurl = answers.baseurl;
+            var menu = JSON.parse(`{
+                "button": [
+                    {
+                        "type": "view",
+                        "name": "哪里消费",
+                        "url": "${baseurl}/shops"
+                    },
+                    {
+                        "type": "view",
+                        "name": "申请返现",
+                        "url": "${baseurl}/wechat/action?toUrl=/-/indications"
+                    },
+                    {
+                        "name": "我的账号",
+                        "sub_button": [
+                            {
+                                "type": "view",
+                                "name": "我的资料",
+                                "url": "${baseurl}/wechat/action?toUrl=/users/info"
+                            },
+                            {
+                                "type": "view",
+                                "name": "返了多少",
+                                "url": "${baseurl}/wechat/action?toUrl=/users/rebates"
+                            },
+                            {
+                                "type": "click",
+                                "name": "关于我们",
+                                "key": "ABOUT_US"
+                            },
+                            {
+                                "type": "click",
+                                "name": "活动规则",
+                                "key": "ACTIVITY_RULES"
+                            },
+                            {
+                                "type": "view",
+                                "name": "找找客服",
+                                "url": "${baseurl}/faq"
+                            }
+                        ]
+                    }
+                ]
+            }`);
+            if ( answers.withLogout ) {
+                menu.button[2].sub_button.push(
+                            {
+                                "type":"view",
+                                "name": "登出",
+                                "url": `${baseurl}/session/logout`
+                            }
+                            );
+            }
+
+            console.log("creating menu: ", menu);
+            console.log("creating menu: ", menu.button[1].sub_button);
+            //console.log("creating menu: ", menu.button[2].sub_button);
+            api.createMenu(menu,function(err, result, response){
+                if ( result ) {
+                    console.log(result);
+                    console.log(result.errmsg);
+                    return process.exit(result.errcode);
+                }
+                process.exit(0);
+            })
+
+
+        });
+    })
+
+program.parse(process.argv);

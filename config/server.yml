@@ -1,0 +1,33 @@
+development:
+  port: 18000
+  mdns:
+    ad:
+  db:
+    username: root
+    password: happy
+    dbname: eskygo
+  passport:
+    host: https://eskygoycnpassport.localtunnel.me
+    loginUrl: /users/signin
+    domain:
+          - .eskygo.com
+          - .localtunnel.me
+  cacheTemplate: true
+  cdn: /static/
+  minimize: false
+  precompileTemplates: false
+test:
+  port: 18000
+  db:
+    dbname: eskygo
+  mdns:
+    ad:
+      interface: lo
+    domain: .local
+  passport:
+    domain:
+      - .eskygo.com
+      - .localtunnel.me
+      - .eskygo123457.localtunnel.me
+    host: http://merchant.local.eskygo.com:13000
+    loginUrl: http://merchant.local.eskygo.com:10000/login

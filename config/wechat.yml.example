@@ -1,0 +1,5 @@
+development:
+  appId: yourAppId
+  appSecret: yourSecret
+  token: yourToken
+  domain: yourDomain

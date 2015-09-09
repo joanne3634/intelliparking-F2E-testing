@@ -1,0 +1,35 @@
+{! {>"common/mobile-v3.layout.dust"/} !}
+{<title}十三点登录{/title}
+{<styles}
+<script>
+// $script(['{@static src="/users/signin/main.scss.js"/}'])
+</script>
+{/styles}
+{<content}
+<div class="content signin firstContainer">
+    <section class="avatar">
+        {! <img src="{@static src="/images/logo-sq.jpg"/}" alt="13点LOGO" /> !}
+    </section>
+    <form method="post" action="/users/signin" >
+        {?error}<div class="errorMsg">{error}</div>{/error}
+        {#token}<input type="hidden" name="t" value="{token}">{/token}
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="fa fa-phone-square icon placeholder-icon"></i>
+                <input type="text" name="username" placeholder="手机号">
+            </label>
+            <label class="item item-input">
+                <i class="fa fa-lock icon placeholder-icon"></i>
+                <input type="password" name="password" placeholder="请输入您的密码">
+            </label>
+        </div>
+        <div class="card-shift">
+            <button type="submit" class="button button-block button-positive">登录13点</button>
+            <a class="button button-block button-light" href="{@route route="/users/signup?t={token}"/}">没有账号？点此注册</a>
+        </div>
+    </form>
+</div>
+{/content}
+{<js}
+    {! // <script src="{@static src="/users/signin/main.js"/}"></script> !}
+{/js}

@@ -1,0 +1,4 @@
+{@form route="/users/rebates" class="rebateForm" method="POST"}
+    <input type="hidden" name="step" value="{step}"/>
+    <button type="submit">{amount}</button>
+{/form}

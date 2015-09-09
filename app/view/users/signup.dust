@@ -1,0 +1,73 @@
+{>"common/mobile-v2.layout.dust"/}
+{<title}十三点注册{/title}
+{<styles}
+<script>
+$script(['{@static src="/users/signup/main.scss.js"/}'])
+</script>
+{/styles}
+{<content}
+<div class="content signup firstContainer">
+    <section class="avatar">
+        <img src="{@static src="/images/logo-sq.jpg"/}" alt="13点LOGO" />
+    </section>
+    <form method="post" action="/users/signup">
+        <div class="errorMsg">{error}</div>
+        {#token}<input type="hidden" name="t" value="{token}">{/token}
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="fa fa-user fa-fw icon placeholder-icon"></i>
+                <input type="text" name="name" placeholder="真实姓名">
+            </label>
+            <label class="item item-input">
+                <i class="fa fa-credit-card fa-fw icon placeholder-icon"></i>
+                <input type="tel" name="bankCard" placeholder="信用卡卡号" maxlength="19" id="cardNumber" autocomplete="cc-number" x-autocompletetype="cc-number">
+            </label>
+            <label class="item item-input">
+                <i class="fa fa-phone-square fa-fw icon placeholder-icon"></i>
+                <input type="tel" name="username" maxlength="11" placeholder="手机号码">
+            </label>
+            <label class="item item-input">
+                <i class="fa fa-map-marker fa-fw icon placeholder-icon"></i>
+                <input type="hidden" name="area" maxlength="6">
+                <input type="text" id="areaName" class="cloned-text-input" data-toggle="modal" data-target="#switch-area" readonly placeholder="所在区域">
+            </label>
+            <label class="item item-input" for="password">
+                <i class="fa fa-lock fa-fw icon placeholder-icon"></i>
+                <input type="password" id="password" class="active" name="password" placeholder="登入密码">
+                <input type="text" id="_password" placeholder="登入密码">
+                <button type="button" id="btnShowPwd" class="button button-icon fa fa-eye-slash"></button>
+            </label>
+        </div>
+        <div class="card-shift">
+            <label for="agreement-check">
+                <input type="checkbox" id="agreement-check" name="agreement" value="1" checked/>
+                <span> 同意接受</span> <a href="#agreement" data-toggle="modal">《13点用户协议》</a>
+            </label>
+            <button type="submit" class="button button-block button-positive">注册成为13点会员</button>
+            <a class="button button-block button-light" href="{@route route="/users/signin?t={token}"/}">已有账号？点此登入</a>
+        </div>
+    </form>
+</div>
+<div id="agreement" class="modal-backdrop">
+    <div class="modal-backdrop-bg"></div>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="bar bar-header bar-light">
+                <h1 class="title">13 点用户使用协议</h1>
+                <button type="button" class="button button-icon" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <iframe class="content has-header" src="{@static src="/html/user-agreement.html"/}"></iframe>
+        </div>
+    </div>
+</div>
+
+<div id="switch-area" class="modal-backdrop">
+    <div class="modal-backdrop-bg"></div>
+    <div class="modal-wrapper">
+        <div class="modal"></div>
+    </div>
+</div>
+{/content}
+{<js}
+    <script src="{@static src="/users/signup/main.js"/}"></script>
+{/js}

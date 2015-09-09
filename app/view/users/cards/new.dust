@@ -1,0 +1,46 @@
+{>"common/mobile-v3.layout.dust"/}
+{<title}十三点卡验证{/title}
+{<styles}
+<script>
+$script(['{@static src="/users/cards/main.scss.js"/}'])
+</script>
+{/styles}
+{<content}
+<div class="content signup">
+    <section class="avatar">
+        <img src="{@static src="/images/logo-sq.jpg"/}" alt="13点LOGO" />
+    </section>
+    <form method="post" action="/-/cc" id="cardForm">
+        <div class="errorMsg">{error}</div>
+        <div class="additionalInfo">
+        {?data}
+            {@eq key=data.action value="createSpendings"}就差这一步你就可能得到<em>￥<span class="money">{@money value=data.meta.data.rebateAmount type="cents" /}</span></em>返现哦！{/eq}
+        {/data}
+        </div>
+        {#token}<input type="hidden" name="token" value="{token}">{/token}
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="fa fa-user fa-fw icon placeholder-icon"></i>
+                <input type="text" name="name" placeholder="真实姓名">
+            </label>
+            <label class="item item-input">
+                <i class="fa fa-credit-card fa-fw icon placeholder-icon"></i>
+                <input type="tel" name="identity" placeholder="信用卡卡号（x-{dian13user.last4_number}）" maxlength="19" id="cardNumber" data-lastfour="{dian13user.last4_number}">
+            </label>
+            <label class="item item-input">
+                <i class="fa fa-phone-square fa-fw icon placeholder-icon"></i>
+                <input type="tel" name="mobile" maxlength="11" placeholder="银行预留手机号码">
+            </label>
+        </div>
+        <div class="card-shift">
+            <button type="submit" class="button button-block button-positive" id="submitCard">卡验证</button>
+        </div>
+    </form>
+    <div id="cardOtp">
+    </div>
+</div>
+
+{/content}
+{<js}
+    <script src="{@static src="/users/cards/main.js"/}"></script>
+{/js}

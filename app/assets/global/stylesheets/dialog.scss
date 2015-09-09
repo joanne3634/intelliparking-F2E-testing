@@ -1,0 +1,33 @@
+#dialogoverlay{
+	display: none;
+	opacity: .4;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #000;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #fff;
+	border-radius:15px; 
+	width:280px;
+	z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; text-align: center;}
+#dialogbox > div > #dialogboxhead{ 
+	font-size: 19px;
+    padding: 10px; 
+}
+#dialogbox > div > #dialogboxbody{ text-align: left; padding:10px; font-size: 14px; }
+#dialogbox > div > #dialogboxfoot{ padding:10px; display:flex; }
+
+button.ui.button.confirm{
+	width: 50%;
+}
+
+button.ui.button.alert{
+	width: 100%;
+}

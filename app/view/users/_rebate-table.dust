@@ -1,0 +1,13 @@
+{#rebates}
+    <div class="card">
+        <div class="item item-text-wrap {status}">
+            <p>返利金额：￥{@money value=amount type="cents" /}</p>
+            <p>申请时间：{@date key=created_at format="YYYY-MM-DD HH:mm:ss"/}</p>
+            {@select key=status}
+                {@eq value="pending"}<p>状态：待确认</p>{/eq}
+                {@eq value="invalid"}<p>状态：无效</p>{/eq}
+                {@default}<p>状态：已付款</p>{/default}
+            {/select}
+        </div>
+    </div>
+{/rebates}

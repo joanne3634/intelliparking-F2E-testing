@@ -1,0 +1,49 @@
+/*車牌號碼 Radio Button*/
+
+fieldset {
+    background-color: #fff;
+}
+
+.radioBtn {
+    display: inline-block;
+    background-color: #fff;
+    height: 30px;
+    width: 30px;
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid rgba(39, 41, 43, 0.15);
+    line-height: 30px;
+}
+
+.radioBtn.active {
+    color: #fff;
+    background-color: #09ba07;
+}
+
+.radioBtn input[type=radio] {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    /* using accessaid style css to make sure it is not visible but yet usable */
+}
+
+#Sheng,
+#Abc {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 2;
+}
+
+#mask {
+    display: none;
+    position: absolute;
+    width: 100%;
+    /*top:40px;*/
+    /*background-color: #f00;*/
+    /* z-index: 0;*/
+}

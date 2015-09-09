@@ -1,0 +1,63 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+@import "components/form";
+@import "components/button";
+@import "components/dropdown";
+@import "components/input";
+@import "semantic.min.css";
+@import "carcode";
+
+/*驗證碼fields*/
+
+.ui.form .field > .selection.dropdown {
+    position: relative;
+}
+
+#ValidateFields {
+    margin-bottom: 1em;
+    .validate-code {
+        @include span-columns(7);
+    }
+    .get-code-field {
+        text-align: right;
+        @include span-columns(5);
+        #GetCode {
+            @include span-columns(12);
+            border-radius: 0px!important;
+            border: 1px solid rgba(39, 41, 43, 0.15);
+        }
+    }
+}
+
+
+/*車牌*/
+
+.ui.form .field > .selection.dropdown {
+    @include span-columns(4);
+    min-width: initial;
+    position: relative;
+    border-radius: 0px;
+    border: 1px solid rgba(39, 41, 43, 0.15);
+    margin-bottom: 1em;
+    margin-right: 0;
+}
+
+
+/*車號*/
+
+#CarNumber {
+    margin-bottom: 1em;
+    border-left: none;
+    width: 68.23843%;
+}
+
+
+/*車牌字顏色*/
+
+.ui.default.dropdown:hover > .text,
+.ui.default.dropdown > .text,
+.ui.dropdown:hover > .default.text,
+.ui.dropdown > .default.text {
+    color: black;
+}

@@ -1,0 +1,68 @@
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+
+@import "components/button";
+@import "components/list";
+
+body{
+	background-color: #fff;
+}
+.content .title{
+    @include span-columns(4);
+    @include shift(1);
+}
+
+.content .value{
+    @include span-columns(6);
+}
+
+.content .value.red{
+    color: red;
+}
+
+.content .value.green{
+    color: green;
+}
+.content .large{
+    font-weight: bold;
+}
+.content .value.large{
+    font-size: 30px;
+}
+
+p.hint{
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.list .item a:hover,
+.list .item a:active,
+.list .item a.active {
+    text-decoration: none;
+}
+.ui.list .item a:hover {
+    color: #333 !important;
+}
+.ui.relaxed.list:not(.horizontal) .item {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.fa{
+    color: #b7b5b5;
+}
+.list .item a{
+    display:block;
+}
+.list .item a > i:first-child{
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    padding: 9px;
+    float: right;
+    top: 9px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 3px;
+}

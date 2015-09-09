@@ -1,0 +1,4 @@
+production:
+  "eskygo-user-service": "http://127.0.0.1:5006/"
+test:
+  "eskygo-user-service": "http://127.0.0.1:5006/"
