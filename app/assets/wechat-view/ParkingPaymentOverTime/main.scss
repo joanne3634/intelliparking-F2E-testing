@@ -1,9 +1,9 @@
-@import "bourbon/bourbon";
-@import "base/base";
-@import "neat/neat";
+@import "../../global/stylesheets/bourbon/bourbon";
+@import "../../global/stylesheets/base/base";
+@import "../../global/stylesheets/neat/neat";
 
-@import "components/button";
-@import "components/list";
+@import "../../global/stylesheets/components/button";
+@import "../../global/stylesheets/components/list";
 
 body{
     background-color: #fff;
