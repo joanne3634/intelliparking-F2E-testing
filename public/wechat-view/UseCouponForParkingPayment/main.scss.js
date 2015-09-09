@@ -56,8 +56,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?-minimize!./../../../../node_modules/sass-loader/index.js?includePaths[]=/Users/mac/GitHub/intelliparking/node_modules/bourbon-neat/app/assets/stylesheets&includePaths[]=/Users/mac/GitHub/intelliparking/node_modules/bourbon/app/assets/stylesheets!./main.scss", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js?-minimize!./../../../../node_modules/sass-loader/index.js?includePaths[]=/Users/mac/GitHub/intelliparking/node_modules/bourbon-neat/app/assets/stylesheets&includePaths[]=/Users/mac/GitHub/intelliparking/node_modules/bourbon/app/assets/stylesheets!./main.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js?-minimize!./../../../../node_modules/sass-loader/index.js?includePaths[]=/Users/mac/GitHub/intelliparking-F2E-testing/node_modules/bourbon-neat/app/assets/stylesheets&includePaths[]=/Users/mac/GitHub/intelliparking-F2E-testing/node_modules/bourbon/app/assets/stylesheets!./main.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js?-minimize!./../../../../node_modules/sass-loader/index.js?includePaths[]=/Users/mac/GitHub/intelliparking-F2E-testing/node_modules/bourbon-neat/app/assets/stylesheets&includePaths[]=/Users/mac/GitHub/intelliparking-F2E-testing/node_modules/bourbon/app/assets/stylesheets!./main.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
