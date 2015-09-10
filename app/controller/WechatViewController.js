@@ -12,6 +12,13 @@ exports = module.exports = function(app) {
             });
         });
 
+        router.get('/index', function*(next) {
+            yield this.render('wechat-view/index.html', {
+                token: this.query['t']
+            });
+        });
+
+
         router.get('/ParkingPayment', function*(next) {
             yield this.render('wechat-view/ParkingPayment.html', {
                 token: this.query['t']
