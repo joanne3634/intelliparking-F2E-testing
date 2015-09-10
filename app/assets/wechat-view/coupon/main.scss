@@ -1,6 +1,9 @@
 @import "../../global/stylesheets/bourbon/bourbon";
 @import "../../global/stylesheets/base/base";
 @import "../../global/stylesheets/neat/neat";
+body{
+    padding: 0px;
+}
 .tab-nav{
 	font-size: .9em;
     background-color: #ffffff;
@@ -11,11 +14,13 @@
     width: 100%;
     z-index: 100;
     top: 0;
-    margin-left: -15px;
+    // margin-left: -15px;
 }
 .tab-nav .tab-nav-button{
 	@include span-columns(6);
+    width: 50%;
 	padding: 1.3em 0 0 0;
+    margin-right: 0px;
 	color: gray;
     height: 50px;
 }
@@ -25,7 +30,7 @@
 	border-bottom: #28bc6e 2px solid;
 }
 #TabContent{
-	padding-top: 55px;
+    padding: 70px 15px 15px 15px;
 }
 .ui.cards {
     display: -webkit-box;
