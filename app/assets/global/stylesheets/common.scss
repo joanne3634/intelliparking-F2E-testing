@@ -7,9 +7,15 @@ body {
     background-color: #ececec;
 }
 
-.button-green {
-    background-color: $wechat-green !important;
-    color: #fff!important;
+.ui.button.button-green {
+    background-color: #09ba07;
+    color: #fff;
+     width: 100%;
+}
+.ui.button.button-gray {
+    background-color: #999;
+    color:#fff;
+     width: 100%;
 }
 input{
 	border-radius: 0px!important;

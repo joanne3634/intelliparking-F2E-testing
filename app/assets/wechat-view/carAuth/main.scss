@@ -4,7 +4,7 @@
 @import "../../global/stylesheets/components/form";
 @import "../../global/stylesheets/components/dropdown";
 @import "../../global/stylesheets/components/input";
-@import "../../global/stylesheets/semantic.min.css";
+// @import "../../global/stylesheets/semantic.min.scss";
 @import "../../global/stylesheets/carcode";
 .ui.form .field > .selection.dropdown{
     max-height: 43px;
@@ -15,10 +15,10 @@
 .ui.form input[type="text"]{
 	text-align: center;
 }
-button.ui.button{
-	width: 60px;
-    margin-right: 0px;
-}
+// button.ui.button{
+// 	width: 60px;
+//     margin-right: 0px;
+// }
 .ui.button,#CarNumberLabel,.inputWrapper{
 	color: black;
     background-color: #ffffff;
