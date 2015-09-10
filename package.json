@@ -10,7 +10,7 @@
   "author": "xyezir",
   "license": "ISC",
   "dependencies": {
-    "@eskygo/koala-puree": "^0.1.42",
+    "@eskygo/koala-puree": "^0.1.44",
     "aws-sdk": "^2.1.36",
     "bluebird": "^2.9.30",
     "bourbon": "^4.2.4",
