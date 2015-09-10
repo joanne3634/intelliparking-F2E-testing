@@ -68,6 +68,9 @@ exports = module.exports = function(app) {
         router.get('/coupon', function*(next){
             yield this.render('wechat-view/coupon.html', {token:this.query['t']});
         });
+        router.get('/coupon-dust', function*(next){
+            yield this.render('wechat-view/coupon.dust', {token:this.query['t']});
+        });
         router.get('/help', function*(next){
             yield this.render('wechat-view/help.html', {token:this.query['t']});
         });

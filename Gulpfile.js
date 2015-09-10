@@ -20,12 +20,13 @@ gulp.task('webpack', function () {
         .pipe(webpack(require('./webpack.config.js'), require('webpack')))
         .pipe(gulp.dest('public'));
 });
-
 gulp.task('copy', function () {
     return [gulp.src("./app/assets/images/**/*")
         .pipe(gulp.dest('public/images')),
-        gulp.src("./app/assets/html/**/*")
-            .pipe(gulp.dest('public/html')),
+        gulp.src("./app/assets/global/**/!(_)*.js")
+            .pipe(gulp.dest('public/global')),
+        gulp.src("./app/assets/wechat-view/**/!(_)*.js")
+            .pipe(gulp.dest('public/wechat-view')),
         gulp.src("./app/assets/vendor/**/*")
             .pipe(gulp.dest('public/vendor'))];
 });
