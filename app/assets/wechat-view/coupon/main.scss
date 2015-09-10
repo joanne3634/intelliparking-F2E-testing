@@ -1,3 +1,6 @@
+@import "../../global/stylesheets/bourbon/bourbon";
+@import "../../global/stylesheets/base/base";
+@import "../../global/stylesheets/neat/neat";
 .tab-nav{
 	font-size: .9em;
     background-color: #ffffff;
@@ -11,12 +14,14 @@
     margin-left: -15px;
 }
 .tab-nav .tab-nav-button{
-	width: 50%;
+	@include span-columns(6);
 	padding: 1.3em 0 0 0;
 	color: gray;
+    height: 50px;
 }
 .tab-nav .tab-nav-button.active, .tab-nav .tab-nav-button:hover{
 	color: #28bc6e;
+    height: 50px;
 	border-bottom: #28bc6e 2px solid;
 }
 #TabContent{

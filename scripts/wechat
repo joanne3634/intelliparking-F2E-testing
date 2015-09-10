@@ -21,43 +21,38 @@ program
                 "button": [
                     {
                         "type": "view",
-                        "name": "哪里消费1",
-                        "url": "${baseurl}"
+                        "name": "付停車費",
+                        "url": "${baseurl}/wechat-view/paychoice"
                     },
                     {
-                        "type": "view",
-                        "name": "申请返现1",
-                        "url": "${baseurl}"
-                    },
-                    {
-                        "name": "我的账号1",
+                        "name": "個人中心",
                         "sub_button": [
                             {
                                 "type": "view",
-                                "name": "我的资料",
-                                "url": "${baseurl}"
+                                "name": "我的優惠券",
+                                "url": "${baseurl}/wechat-view/coupon"
                             },
                             {
                                 "type": "view",
-                                "name": "返了多少",
-                                "url": "${baseurl}"
-                            },
-                            {
-                                "type": "click",
-                                "name": "关于我们",
-                                "key": "ABOUT_US"
-                            },
-                            {
-                                "type": "click",
-                                "name": "活动规则",
-                                "key": "ACTIVITY_RULES"
+                                "name": "我的車輛",
+                                "url": "${baseurl}/wechat-view/car"
                             },
                             {
                                 "type": "view",
-                                "name": "找找客服",
-                                "url": "${baseurl}"
+                                "name": "車牌認證",
+                                "url": "${baseurl}/wechat-view/carAuth"
+                            },
+                            {
+                                "type": "view",
+                                "name": "停車記錄",
+                                "url": "${baseurl}/wechat-view/parkingRecord"
                             }
                         ]
+                    },
+                    {
+                        "type": "view",
+                        "name": "使用幫助",
+                        "url": "${baseurl}/wechat-view/help"
                     }
                 ]
             }`);
