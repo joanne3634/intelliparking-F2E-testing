@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>车牌认证</title>
-    <script src="/wechat-view/carAuth/main.scss.js"></script> 
+    <script src="/wechat-view/carAuth/main.scss.js"></script>
     <script src="/global/stylesheets/common.scss.js"></script>
     <script src="/global/stylesheets/dialog.scss.js"></script>
 </head>
 
 <body>
+    <div id="mask"></div>
     <p>如果您的车牌被恶意绑定，可以通过上传车牌照片和机动车行驶证照片进行车牌认证。由此给您带来的不便我们由衷地表示歉意。
     </p>
     <form onsubmit="return validateCarCreate()" class="ui form">
@@ -19,7 +20,6 @@
             <select id="CarCode" class="ui dropdown">
                 <option value="">车牌</option>
             </select>
-            <div id="mask"></div>
             <div id="Sheng" class="">
                 <fieldset>
                     <label class="radioBtn active" for="radio1">
@@ -164,7 +164,6 @@
             <div id="dialogboxfoot"></div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/jquery.mobile.custom.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/semantic.min.js" type="text/javascript" charset="utf-8"></script>

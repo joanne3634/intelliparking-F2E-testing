@@ -18,7 +18,9 @@
     @include span-columns(9);
     margin-bottom: 0em;
 }
-
+.ui.form .fields > .selection.dropdown{
+    max-height: 43px;
+}
 button.ui.button {
     @include span-columns(3);
 }
