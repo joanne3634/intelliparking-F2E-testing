@@ -1,12 +1,12 @@
-@import "bourbon/bourbon";
-@import "base/base";
-@import "neat/neat";
-@import "components/form";
-@import "components/button";
-@import "components/dropdown";
-@import "components/input";
-@import "semantic.min.css";
-@import "carcode";
+@import "../../global/stylesheets/bourbon/bourbon";
+@import "../../global/stylesheets/base/base";
+@import "../../global/stylesheets/neat/neat";
+@import "../../global/stylesheets/components/form";
+@import "../../global/stylesheets/components/button";
+@import "../../global/stylesheets/components/dropdown";
+@import "../../global/stylesheets/components/input";
+@import "../../global/stylesheets/semantic.min.css";
+@import "../../global/stylesheets/carcode";
 
 /*驗證碼fields*/
 

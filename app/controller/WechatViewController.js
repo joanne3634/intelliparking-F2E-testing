@@ -11,6 +11,11 @@ exports = module.exports = function(app) {
                 token: this.query['t']
             });
         });
+        router.get('/index', function*(next) {
+            yield this.render('wechat-view/index.html', {
+                token: this.query['t']
+            });
+        });
 
         router.get('/index', function*(next) {
             yield this.render('wechat-view/index.html', {
@@ -48,9 +53,24 @@ exports = module.exports = function(app) {
             });
         });
 
-
-
-
+        router.get('/afterCarAuth', function*(next){
+            yield this.render('wechat-view/afterCarAuth.html', {token:this.query['t']});
+        });
+        router.get('/binding', function*(next){
+            yield this.render('wechat-view/binding.html', {token:this.query['t']});
+        });
+        router.get('/car', function*(next){
+            yield this.render('wechat-view/car.html', {token:this.query['t']});
+        });
+        router.get('/carAuth', function*(next){
+            yield this.render('wechat-view/carAuth.html', {token:this.query['t']});
+        });
+        router.get('/coupon', function*(next){
+            yield this.render('wechat-view/coupon.html', {token:this.query['t']});
+        });
+        router.get('/help', function*(next){
+            yield this.render('wechat-view/help.html', {token:this.query['t']});
+        });
+        
     });
-
 }
