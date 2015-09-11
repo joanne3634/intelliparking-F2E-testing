@@ -1,16 +1,15 @@
 /*車牌號碼 Radio Button*/
-.ui.form .fields > .selection.dropdown{
-    max-height: 43px;
-}
-.ui.form .field{
+
+.ui.form .field {
     position: relative;
 }
+
 fieldset {
     background-color: #fff;
 }
 
 .radioBtn {
-    margin:2px;
+    margin: 2px;
     display: inline-block;
     background-color: #fff;
     height: 30px;
@@ -42,6 +41,13 @@ fieldset {
     position: absolute;
     left: 0;
     top: 45px;
+}
+
+#Sheng {
+    z-index: 3;
+}
+
+#Abc {
     z-index: 2;
 }
 
@@ -50,6 +56,10 @@ fieldset {
     position: absolute;
     width: 100%;
     /*top:40px;*/
-    /*background-color: #f00;*/
-     z-index: 1;
+    // background-color: #f00;
+   /* z-index: 0;*/
+}
+
+.ui.form .fields > .selection.dropdown {
+    max-height: 43px;
 }

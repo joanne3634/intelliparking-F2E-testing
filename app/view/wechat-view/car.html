@@ -6,20 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>我的车辆</title>
-
-    <script src="/wechat-view/car/main.scss.js"></script>        
+    <script src="/wechat-view/car/main.scss.js"></script>
     <script src="/global/stylesheets/common.scss.js"></script>
     <script src="/global/stylesheets/dialog.scss.js"></script>
-    <script src="/global/javascripts/dialog.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="/global/javascripts/dialog.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
-    <form onsubmit="return validateCarCreate()"  class="ui form">
+    <div id="mask"></div>
+    <form onsubmit="return validateCarCreate()" class="ui form">
         <div class="fields">
-            <select id="CarCode" class="ui dropdown">
-                <option value="">车牌</option>
-            </select>
-            <div id="mask"></div>
+            <div class="ui dropdown selection" tabindex="0">
+                <select id="CarCode">
+                    <option value="">车牌</option>
+                </select><i class="dropdown icon"></i>
+                <div class="default text">车牌</div>
+                <div class="menu" tabindex="-1"></div>
+            </div>
             <div id="Sheng" class="">
                 <fieldset>
                     <label class="radioBtn active" for="radio1">
@@ -167,12 +170,10 @@
             <div id="dialogboxfoot"></div>
         </div>
     </div>
-  
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/jquery.mobile.custom.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/global/javascripts/semantic.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/carLicense.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/wechat-view/car/main.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="/wechat-view/car/main.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

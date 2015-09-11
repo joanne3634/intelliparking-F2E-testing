@@ -13,7 +13,7 @@
 </head>
 
 <body>
- <div id="mask"></div>
+    <div id="mask"></div>
     <!--Head of Customs Dialog-->
     <div id="dialogoverlay"></div>
     <div id="dialogbox">
@@ -39,9 +39,13 @@
             </div>
         </div>
         <div id="CarLicense" class="field">
-            <select id="CarCode" class="ui dropdown">
-                <option value="">车牌</option>
-            </select>
+            <div class="ui dropdown selection" tabindex="0">
+                <select id="CarCode">
+                    <option value="">车牌</option>
+                </select><i class="dropdown icon"></i>
+                <div class="default text">车牌</div>
+                <div class="menu" tabindex="-1"></div>
+            </div>
             <!--Start 客製化的车牌选单html结构-->
             <div id="Sheng" class="">
                 <fieldset>
@@ -172,7 +176,6 @@
     </form>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/jquery.mobile.custom.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/global/javascripts/semantic.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/carLicense.js" type="text/javascript" charset="utf-8"></script>
     <script src="/wechat-view/binding/main.js" type="text/javascript" charset="utf-8"></script>
 </body>
