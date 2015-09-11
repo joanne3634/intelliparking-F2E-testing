@@ -1,20 +1,27 @@
 @import "../../global/stylesheets/bourbon/bourbon";
 @import "../../global/stylesheets/base/base";
 @import "../../global/stylesheets/neat/neat";
-
 @import "../../global/stylesheets/components/button";
 @import "../../global/stylesheets/components/list";
-
-body{
-	background-color: #fff;
+body {
+    background-color: #fff;
 }
 
 .content .title {
-    @include span-columns(7);
+    @include span-columns(4);
     @include shift(1);
 }
 
 .content .value {
+    @include span-columns(6);
+}
+
+.edit .content .title {
+    @include span-columns(7);
+    @include shift(1);
+}
+
+.edit .content .value {
     @include span-columns(3);
 }
 
@@ -82,4 +89,3 @@ p.hint {
     margin-left: 1em;
     color: #b7b5b5;
 }
-
