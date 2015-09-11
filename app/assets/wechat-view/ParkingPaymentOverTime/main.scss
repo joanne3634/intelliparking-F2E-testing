@@ -16,7 +16,9 @@ body{
 .content .value{
     @include span-columns(6);
 }
-
+.content .value:last-child{
+    text-align: right;
+}
 .content .value.red{
     color: red;
 }
@@ -31,4 +33,12 @@ p.hint{
 .ui.relaxed.list:not(.horizontal) > .item {
     padding-top: .8rem;
     padding-bottom: .8rem;
+}
+
+.content .large {
+    font-weight: bold;
+}
+
+.content .value.large {
+    font-size: 30px;
 }

@@ -8,30 +8,37 @@
 body{
 	background-color: #fff;
 }
-.content .title{
+
+.content .title {
     @include span-columns(4);
     @include shift(1);
 }
 
-.content .value{
+.content .value {
     @include span-columns(6);
 }
 
-.content .value.red{
+.content .value:last-child {
+    text-align: right;
+}
+
+.content .value.red {
     color: red;
 }
 
-.content .value.green{
+.content .value.green {
     color: green;
 }
-.content .large{
+
+.content .large {
     font-weight: bold;
 }
-.content .value.large{
+
+.content .value.large {
     font-size: 30px;
 }
 
-p.hint{
+p.hint {
     padding-top: 10px;
     font-size: 13px;
 }
@@ -41,21 +48,25 @@ p.hint{
 .list .item a.active {
     text-decoration: none;
 }
+
 .ui.list .item a:hover {
     color: #333 !important;
 }
+
 .ui.relaxed.list:not(.horizontal) .item {
     padding-top: .8rem;
     padding-bottom: .8rem;
 }
 
-.fa{
+.fa {
     color: #b7b5b5;
 }
-.list .item a{
-    display:block;
+
+.list .item a {
+    display: block;
 }
-.list .item a > i:first-child{
+
+.list .item a > i:first-child {
     height: 35px;
     width: 35px;
     text-align: center;
@@ -66,3 +77,9 @@ p.hint{
     margin-right: 10px;
     border-radius: 3px;
 }
+
+.gray {
+    margin-left: 1em;
+    color: #b7b5b5;
+}
+
