@@ -15,7 +15,7 @@
     <div id="mask"></div>
     <p>如果您的车牌被恶意绑定，可以通过上传车牌照片和机动车行驶证照片进行车牌认证。由此给您带来的不便我们由衷地表示歉意。
     </p>
-    <form onsubmit="return validateCarCreate()" class="ui form">
+    <form id="CarCreateForm" class="ui form">
         <div class="field">
             <div class="ui dropdown selection" tabindex="0">
                 <select id="CarCode">
@@ -168,7 +168,7 @@
             <div id="dialogboxfoot"></div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/global/javascripts/jquery.mobile.custom.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/carLicense.js" type="text/javascript" charset="utf-8"></script>
     <script src="/wechat-view/carAuth/main.js" type="text/javascript" charset="utf-8"></script>

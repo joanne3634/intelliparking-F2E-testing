@@ -9,12 +9,11 @@
     <script src="/wechat-view/car/main.scss.js"></script>
     <script src="/global/stylesheets/common.scss.js"></script>
     <script src="/global/stylesheets/dialog.scss.js"></script>
-    <script src="/global/javascripts/dialog.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
     <div id="mask"></div>
-    <form onsubmit="return validateCarCreate()" class="ui form">
+    <form id="CarCreateForm" class="ui form">
         <div class="fields">
             <div class="ui dropdown selection" tabindex="0">
                 <select id="CarCode">
@@ -150,13 +149,13 @@
             <button id="CarCreate" class="ui button" type="submit">新增</button>
         </div>
     </form>
-    <form onsubmit="return validateCarDelete(this)" class="ui form" id="ABCDDDD">
+    <form class="ui form delete" id="ABCDDDD">
         <div class="fields">
             <input readonly="" type="text" name="carLicense" value="ABCDDDD">
             <button id="CarDelete" class="ui button" type="submit">删除</button>
         </div>
     </form>
-    <form onsubmit="return validateCarDelete(this)" class="ui form" id="京A BC123">
+    <form class="ui form delete" id="京A BC123">
         <div class="fields">
             <input readonly="" type="text" name="carLicense" value="京A BC123">
             <button id="CarDelete" class="ui button" type="submit">删除</button>

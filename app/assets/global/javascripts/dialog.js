@@ -52,7 +52,7 @@ function deletePost(id){
 }
 
 function CustomConfirm(){
-	this.render = function(dialog,op_l,id,op_r,url,left,right){
+		this.render = function(dialog,op_l,id,op_r,url,left,right){
 		var winW = window.innerWidth;
 	    var winH = window.innerHeight;
 		var dialogoverlay = document.getElementById('dialogoverlay');

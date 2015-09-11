@@ -1,12 +1,77 @@
-jQuery(document).ready(function($) {
+var $ = require('jquery');
 
+// submit 
+$('#RegisterForm').on('submit',function(e){
+    e.preventDefault();
 
-    // Alert.render('请输入正确的手机号码', 'Yes');
-    // Alert.render('请输入正确的验証码', 'Yes');
-    // Alert.render('请输入正确的车牌号', 'Yes');
-    // Alert.render('该车牌信息己被其他帐号添加，请在原帐号删除后，重新在此帐号添加。', 'Yes');
-    // Confirm.render('该车牌信息己被其他帐号添加，请在原帐号删除后，重新在此帐号添加。', null, null, '好的', '车牌认证');
+    var carNumber = document.getElementById('CarNumber');
+    
+    /* 不足5位 */
+    if(carNumber.value.length != 5){
+        Alert('请输入正确的手机号码','好的');
+        return false;
+    }
 
-    // Confirm.render('该车牌信息己被其他帐号添加，请在原帐号删除后，重新在此帐号添加。', 'delete_car_license', 'id1', 'redirect', null, '好的', '车牌认证');
+    var validateCode = document.getElementById('ValidateCode');
+    var validateCodeStatus = true;
+    /* 驗證碼錯誤 */
+    if( !validateCodeStatus ){
+        Alert('请输入正确的驗證码','好的');
+        return false;
+    }
+
+    /* 車牌已綁定 */
+    var carLicenseBindingStatus = true;
+
+    if( carLicenseBindingStatus ){
+        ConfirmCarBindingStatus('该车牌号已被其他帐号添加,您可以进行车牌认证以找回','稍後认证','马上认证');
+        return false;
+    }
 
 });
+
+function Alert(dialog,check){
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.getElementById('dialogoverlay');
+    var dialogbox = document.getElementById('dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH+"px";
+    dialogbox.style.left = (winW/2) - (280 * .5)+"px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    $('#dialogboxhead').html("eGo提示");
+    $('#dialogboxbody').html(dialog);
+    $('#dialogboxfoot').html('<button id="AlertButton" class="ui button alert">'+check+'</button>');
+}
+$(document).on('click', "#AlertButton", function(e){
+    e.preventDefault();
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+})
+
+function ConfirmCarBindingStatus (dialog,left,right){
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.getElementById('dialogoverlay');
+    var dialogbox = document.getElementById('dialogbox');
+    dialogoverlay.style.display = "block";
+    dialogoverlay.style.height = winH+"px";
+    dialogbox.style.left = (winW/2) - (280 * .5)+"px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "block";
+    
+    $('#dialogboxhead').html("eGo提示");
+    $('#dialogboxbody').html(dialog);
+    $('#dialogboxfoot').html('<button id="ConfirmLeftButton" class="ui button confirm" >'+left+'</button> <button id="ConfirmRightButton" class="ui button confirm">'+right+'</button>');
+}
+
+$(document).on('click', "#ConfirmLeftButton", function(e){
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+})
+$(document).on('click', "#ConfirmRightButton", function(e){
+    document.location = document.location.origin+'/wechat-view/carAuth';
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+})
