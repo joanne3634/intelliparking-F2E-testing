@@ -1,9 +1,12 @@
 @import "../../global/stylesheets/bourbon/bourbon";
 @import "../../global/stylesheets/base/base";
 @import "../../global/stylesheets/neat/neat";
-body{
+
+/* common body padding is 15px , [tab-nav] needs to be customized to fit the screen width */
+body{     
     padding: 0px;
 }
+
 .tab-nav{
 	font-size: .9em;
     background-color: #ffffff;
@@ -14,7 +17,6 @@ body{
     width: 100%;
     z-index: 100;
     top: 0;
-    // margin-left: -15px;
 }
 .tab-nav .tab-nav-button{
 	@include span-columns(6);

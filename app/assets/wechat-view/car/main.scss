@@ -21,8 +21,15 @@
 .ui.form .fields > .selection.dropdown{
     max-height: 43px;
 }
+
+.ui.selection.dropdown > .text {
+    margin-right: 0px;
+}
+
 button.ui.button {
     @include span-columns(3);
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .ui.button,
@@ -44,7 +51,8 @@ button.ui.button {
 #CarNumber {
     text-transform:uppercase;
     border-left: none;
-    width: 42.6%
+    width: 42.6%;
+    height: 43px;
 }
 
 .ui.default.dropdown:hover>.text,

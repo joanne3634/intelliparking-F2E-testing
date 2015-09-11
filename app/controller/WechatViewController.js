@@ -66,7 +66,19 @@ exports = module.exports = function(app) {
             yield this.render('wechat-view/carAuth.html', {token:this.query['t']});
         });
         router.get('/coupon', function*(next){
+            yield this.render('wechat-view/coupon.html');
+        });
+        router.get('/coupons.htm', function*(next){
             yield this.render('wechat-view/coupon.html', {token:this.query['t']});
+        });
+        router.get('/coupons', function*(next){
+            this.body = [{
+                id: 1,
+                name: "fuck"
+            },{
+                id: 2,
+                name: "akdjfalksdjfksjf"
+            }]
         });
         router.get('/coupon-dust', function*(next){
             yield this.render('wechat-view/coupon.dust', {token:this.query['t']});

@@ -23,10 +23,10 @@ gulp.task('webpack', function () {
 gulp.task('copy', function () {
     return [gulp.src("./app/assets/images/**/*")
         .pipe(gulp.dest('public/images')),
-        gulp.src("./app/assets/global/**/!(_)*.js")
-            .pipe(gulp.dest('public/global')),
-        gulp.src("./app/assets/wechat-view/**/!(_)*.js")
-            .pipe(gulp.dest('public/wechat-view')),
+        // gulp.src("./app/assets/global/**/!(_)*.js")
+        //     .pipe(gulp.dest('public/global')),
+        // gulp.src("./app/assets/wechat-view/**/!(_)*.js")
+        //     .pipe(gulp.dest('public/wechat-view')),
         gulp.src("./app/assets/vendor/**/*")
             .pipe(gulp.dest('public/vendor'))];
 });
@@ -64,13 +64,12 @@ gulp.task('deploy', ['build', 'buildgz'], function () {
         }))
         .pipe(require('gulp-s3')(config, options));
 });
-gulp.task('server', ['build'], function () {
+gulp.task('httpServer', function(){
     process.env.RUNNING = "local";
     var App = require('./index.js');
     var HTTPServer = new App();
     HTTPServer.start(function () {
         console.log('info', 'server listening');
     });
-    watchMode = true;
-    return gulp.watch(['app/assets/**', 'app/view/**'], ["cleangz", "build"]);
-});
+})
+gulp.task('server', ['httpServer', 'build']);

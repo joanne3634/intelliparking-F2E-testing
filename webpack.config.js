@@ -1,9 +1,9 @@
 var entries = {};
 var i = 0;
-// require('glob').sync('app/assets/**/!(_)*.js').sort().forEach(function (file) {
-//     console.log(file);
-//     entries[file.substr(11)] = file.substr(11);
-// })
+require('glob').sync('app/assets/**/!(_)*.js').sort().forEach(function (file) {
+    console.log(file);
+    entries[file.substr(11)] = file.substr(11);
+})
 require('glob').sync('app/assets/**/!(_)*.scss').sort().forEach(function (file) {
     console.log(file);
     entries[file.substr(11) + ".js"] = file.substr(11);
@@ -23,6 +23,7 @@ module.exports = options = {
         filename: "[name]",
         chunkFilename: "[id].js"
     },
+    watch: true,
     module: {
         loaders: [
             {test: /\.dust$/, loader: "dust-loader"},
