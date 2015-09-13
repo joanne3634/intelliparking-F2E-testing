@@ -1,0 +1,18 @@
+<div class="card">
+    <a href="#">
+        <div class="content">
+            <div class="card-img">
+                <img src="{images}">
+            </div>
+            <div class="header">
+                {header}
+            </div>
+            <div class="description">
+                {description}
+            </div>
+            <div class="meta">
+                {meta}
+            </div>
+        </div>
+    </a>
+</div>

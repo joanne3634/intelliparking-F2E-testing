@@ -1,20 +1,23 @@
 var $ = require('jquery');
-// var tab0 = document.getElementById('ControlTab0'),
-//     tab1 = document.getElementById('ControlTab1');
+var dust = require('dust');
 
-// tab0.addEventListener('click', function(){
-//     removeClass(document.getElementById("ControlTab1"), "active");
-//     addClass(document.getElementById("ControlTab0"), "active");
-//     document.getElementById("Tab1").style.display = "none";
-//     document.getElementById("Tab0").style.display = "block"; 
-// })
+var template = require("wechat-view/coupons/coupon-item.dust");
+dust.loadSource(template);
+$.getJSON('/wechat-view/coupons/use').success(function(data){
+    data.forEach(function(el){
+        dust.render('app/view/wechat-view/coupons/coupon-item', el,function(err, html){
+            $('#coupon-list-use')[0].insertAdjacentHTML('beforeend', html);
+        })
+    })
+})
+$.getJSON('/wechat-view/coupons/history').success(function(data){
+    data.forEach(function(el){
+        dust.render('app/view/wechat-view/coupons/coupon-item', el,function(err, html){
+            $('#coupon-list-history')[0].insertAdjacentHTML('beforeend', html);
+        })
+    })
+})
 
-// tab1.addEventListener('click', function(){
-//     removeClass(document.getElementById("ControlTab0"), "active");
-//     addClass(document.getElementById("ControlTab1"), "active");
-//     document.getElementById("Tab0").style.display = "none";
-//     document.getElementById("Tab1").style.display = "block";
-// })
 $('#ControlTab0').on('click', function(){
     removeClass(document.getElementById("ControlTab1"), "active");
     addClass(document.getElementById("ControlTab0"), "active");
