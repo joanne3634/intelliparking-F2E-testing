@@ -8,8 +8,9 @@ body {
 }
 
 .content .title {
-    @include span-columns(4);
+    @include span-columns(5);
     @include shift(1);
+    margin-left: 10px;
 }
 
 .content .value {
@@ -19,10 +20,11 @@ body {
 .edit .content .title {
     @include span-columns(7);
     @include shift(1);
+    margin-left: 10px;
 }
 
 .edit .content .value {
-    @include span-columns(3);
+    @include span-columns(4);
 }
 
 .content .value:last-child {
@@ -41,7 +43,7 @@ body {
     font-weight: bold;
 }
 
-.content .value.large {
+.content .value.green.large {
     font-size: 30px;
 }
 
@@ -86,6 +88,6 @@ p.hint {
 }
 
 .gray {
-    margin-left: 1em;
+    margin-left: .5em;
     color: #b7b5b5;
 }

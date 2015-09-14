@@ -3,11 +3,10 @@ var $ = require('jquery');
 // submit 
 $('#RegisterForm').on('submit',function(e){
     e.preventDefault();
-
-    var carNumber = document.getElementById('CarNumber');
     
-    /* 不足5位 */
-    if(carNumber.value.length != 5){
+    /* 手机号码錯誤 */
+    var phoneStatus = true;
+    if( !phoneStatus ){
         Alert('请输入正确的手机号码','好的');
         return false;
     }
@@ -21,11 +20,16 @@ $('#RegisterForm').on('submit',function(e){
     }
 
     /* 車牌已綁定 */
-    var carLicenseBindingStatus = true;
+    // var carLicenseBindingStatus = true;
 
-    if( carLicenseBindingStatus ){
-        ConfirmCarBindingStatus('该车牌号已被其他帐号添加,您可以进行车牌认证以找回','稍後认证','马上认证');
-        return false;
+    // if( carLicenseBindingStatus ){
+    //     ConfirmCarBindingStatus('该车牌号已被其他帐号添加,您可以进行车牌认证以找回','稍後认证','马上认证');
+    //     return false;
+    // }
+
+    var registerStatus = true; 
+    if( registerStatus ){
+        //TODO: redirect to wechat-login page 
     }
 
 });

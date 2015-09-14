@@ -9,8 +9,9 @@ body{
     background-color: #fff;
 }
 .content .title{
-    @include span-columns(4);
+    @include span-columns(5);
     @include shift(1);
+    margin-left: 10px;
 }
 
 .content .value{
@@ -39,6 +40,6 @@ p.hint{
     font-weight: bold;
 }
 
-.content .value.large {
+.content .value.green.large {
     font-size: 30px;
 }
