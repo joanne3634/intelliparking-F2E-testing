@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>注册</title>
+    <title>注册及登录</title>
     <script src="/wechat-view/binding/main.scss.js"></script>
     <script src="/global/stylesheets/common.scss.js"></script>
     <script src="/global/stylesheets/dialog.scss.js"></script>
@@ -24,6 +24,7 @@
         </div>
     </div>
     <!--End of Customs Dialog-->
+    <p class="center">欢迎您, 请填写以下栏位</p>
     <form id="RegisterForm" class="ui form">
         <div class="field">
             <input id="Phone" type="number" name="phone" placeholder="请输入手机号码">
@@ -38,15 +39,15 @@
                 </button>
             </div>
         </div>
-        <div id="CarLicense" class="field">
+         <!-- <div id="CarLicense" class="field">
             <div class="ui dropdown selection" tabindex="0">
                 <select id="CarCode">
                     <option value="">车牌</option>
                 </select><i class="dropdown icon"></i>
                 <div class="default text">车牌</div>
                 <div class="menu" tabindex="-1"></div>
-            </div>
-            <!--Start 客製化的车牌选单html结构-->
+            </div> -->
+<!--             Start 客制化的车牌选单html结构
             <div id="Sheng" class="">
                 <fieldset>
                     <label class="radioBtn active" for="radio1">
@@ -102,7 +103,7 @@
                     <label class="radioBtn" for="sradio26">
                         <input type="radio" id="sradio26" name="area" />藏</label>
                     <label class="radioBtn" for="sradio27">
-                        <input type="radio" id="sradio27" name="area" />陝</label>
+                        <input type="radio" id="sradio27" name="area" />陕</label>
                     <label class="radioBtn" for="sradio28">
                         <input type="radio" id="sradio28" name="area" />甘</label>
                     <label class="radioBtn" for="sradio29">
@@ -168,15 +169,15 @@
                     <label class="radioBtn" for="aradio26">
                         <input type="radio" id="aradio26" name="abc" />Z</label>
                 </fieldset>
-            </div>
-            <!--End 客製化的车牌选单html结构-->
+            </div> -->
+            <!--End 客制化的车牌选单html结构
             <input id="CarNumber" type="text" name="car-number" placeholder="请输入车牌后5位(选填)" maxlength="5">
-        </div>
-        <button class="fluid ui button button-green" type="submit">立即注册</button>
+        </div> -->
+        <button class="fluid ui button button-green" type="submit">确认</button>
     </form>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/global/javascripts/jquery.mobile.custom.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/global/javascripts/carLicense.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="/global/javascripts/carLicense.js" type="text/javascript" charset="utf-8"></script> -->
     <script src="/wechat-view/binding/main.js" type="text/javascript" charset="utf-8"></script>
 </body>
 

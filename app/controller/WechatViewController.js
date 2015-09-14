@@ -53,36 +53,50 @@ exports = module.exports = function(app) {
             }]
         });
 
-        router.get('/parkingRecord/record', function*(next) {
+        router.get('/coupons/parkingPayment', function*(next) {
             this.body = [{
-                number: "1234567890",
-                parkingplace: "陆家嘴国购停车场",
-                costtime: "1小时21分钟",
-                date: "2015/8/24",
-                carlicense: "沪ABC123",
-                feed: "¥10.00"
+                header: "1 hr Free",
+                description: "国购停车场限定",
+                meta: "Expired Date 2015-12-31",
+                images: "/images/95.jpg"
             }, {
-                number: "1234567890",
-                parkingplace: "陆家嘴国购停车场",
-                costtime: "1小时21分钟",
-                date: "2015/8/24",
-                carlicense: "沪ABC123",
-                feed: "¥10.00"
+                header: "15min Free",
+                description: "国购停车场限定",
+                meta: "Expired Date 2015-12-31",
+                images: "/images/95.jpg"
             }, {
-                number: "1234567890",
-                parkingplace: "陆家嘴国购停车场",
-                costtime: "1小时21分钟",
-                date: "2015/8/24",
-                carlicense: "沪ABC123",
-                feed: "¥10.00"
+                header: "45min Free",
+                description: "国购停车场限定",
+                meta: "Expired Date 2015-12-31",
+                images: "/images/95.jpg"
             }, {
-                number: "1234567890",
-                parkingplace: "陆家嘴国购停车场",
-                costtime: "1小时21分钟",
-                date: "2015/8/24",
-                carlicense: "沪ABC123",
-                feed: "¥10.00"
+                header: "2hr Free",
+                description: "国购停车场限定",
+                meta: "Expired Date 2015-12-31",
+                images: "/images/95.jpg"
             }]
         });
+
+        router.get('/parkingPayment', function*(next) {
+            this.body = [{
+                carlicense: "京A BC123",
+                entranceTimeStamp: "2015/8/21 15:20:00",
+                parkingTime: "1小时12分钟",
+                overTime: false,
+                payment: "20.00",
+                coupon: true,
+                coupon_id: "Af3322",
+                coupon_amount: "5.00",
+                paid: "5.00",
+                payment_total: "10.00"
+            }]
+        });
+
+        router.get('/afterCarAuth', function*(next) {
+            this.body = [{carlicense: "沪A BC123"}];
+        });
+
+
+
     });
 }

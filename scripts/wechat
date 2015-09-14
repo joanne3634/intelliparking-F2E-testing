@@ -22,7 +22,7 @@ program
                     {
                         "type": "view",
                         "name": "付停车费",
-                        "url": "${baseurl}/wechat-view/paychoice"
+                        "url": "${baseurl}/static/html/paychoice.html"
                     },
                     {
                         "name": "个人中心",
@@ -30,29 +30,29 @@ program
                             {
                                 "type": "view",
                                 "name": "我的优惠券",
-                                "url": "${baseurl}/wechat-view/coupon"
+                                "url": "${baseurl}/static/html/coupon.html"
                             },
                             {
                                 "type": "view",
                                 "name": "我的车辆",
-                                "url": "${baseurl}/wechat-view/car"
+                                "url": "${baseurl}/static/html/car.html"
                             },
                             {
                                 "type": "view",
                                 "name": "车牌认证",
-                                "url": "${baseurl}/wechat-view/carAuth"
+                                "url": "${baseurl}/static/html/carAuth.html"
                             },
                             {
                                 "type": "view",
                                 "name": "停车记录",
-                                "url": "${baseurl}/wechat-view/parkingRecord"
+                                "url": "${baseurl}/static/html/parkingRecord.html"
                             }
                         ]
                     },
                     {
                         "type": "view",
                         "name": "使用帮助",
-                        "url": "${baseurl}/wechat-view/help"
+                        "url": "${baseurl}/static/html/help.html"
                     }
                 ]
             }`);
