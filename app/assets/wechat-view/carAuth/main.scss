@@ -77,3 +77,17 @@
     -moz-opacity: 0;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
 }
+
+.photo-display {
+    line-height: 0px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 1.0em;
+    img {
+        border: 1px solid #999;
+        width: 100%;
+        margin: 0px;
+    }
+}
