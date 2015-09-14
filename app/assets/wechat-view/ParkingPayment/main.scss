@@ -10,7 +10,7 @@ body {
 .content .title {
     @include span-columns(5);
     @include shift(1);
-    margin-left: 10px;
+    margin-left: 4.5298%;
 }
 
 .content .value {
@@ -20,7 +20,7 @@ body {
 .edit .content .title {
     @include span-columns(7);
     @include shift(1);
-    margin-left: 10px;
+    margin-left: 4.5298%;
 }
 
 .edit .content .value {

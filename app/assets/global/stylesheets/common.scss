@@ -4,18 +4,18 @@ $wechat-green: #09bb07;
 body {
 	margin: 0 0;
     padding: 15px;
-    background-color: #ececec;
+    background-color: $wechat-gray;
 }
 
 .ui.button.button-green {
-    background-color: #09ba07;
+    background-color: $wechat-green;
     color: #fff;
      width: 100%;
 }
 .ui.button.button-gray {
     background-color: #999;
     color:#fff;
-     width: 100%;
+    width: 100%;
 }
 input{
 	border-radius: 0px!important;
