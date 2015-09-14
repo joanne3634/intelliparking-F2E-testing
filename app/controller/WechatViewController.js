@@ -53,5 +53,36 @@ exports = module.exports = function(app) {
             }]
         });
 
+        router.get('/parkingRecord/record', function*(next) {
+            this.body = [{
+                number: "1234567890",
+                parkingplace: "陆家嘴国购停车场",
+                costtime: "1小时21分钟",
+                date: "2015/8/24",
+                carlicense: "沪ABC123",
+                feed: "¥10.00"
+            }, {
+                number: "1234567890",
+                parkingplace: "陆家嘴国购停车场",
+                costtime: "1小时21分钟",
+                date: "2015/8/24",
+                carlicense: "沪ABC123",
+                feed: "¥10.00"
+            }, {
+                number: "1234567890",
+                parkingplace: "陆家嘴国购停车场",
+                costtime: "1小时21分钟",
+                date: "2015/8/24",
+                carlicense: "沪ABC123",
+                feed: "¥10.00"
+            }, {
+                number: "1234567890",
+                parkingplace: "陆家嘴国购停车场",
+                costtime: "1小时21分钟",
+                date: "2015/8/24",
+                carlicense: "沪ABC123",
+                feed: "¥10.00"
+            }]
+        });
     });
 }
