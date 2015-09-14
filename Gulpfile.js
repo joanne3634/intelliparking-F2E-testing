@@ -82,4 +82,6 @@ gulp.task('httpServer', function() {
         console.log('info', 'server listening');
     });
 })
-gulp.task('server', ['httpServer', 'build']);
+gulp.task('server', ['httpServer', 'build'],function(){
+    return gulp.watch(['app/assets/**', 'app/view/**'], ["cleangz", "build"]);
+});

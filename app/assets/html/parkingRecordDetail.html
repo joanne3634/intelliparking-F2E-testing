@@ -5,13 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>付停车费</title>
+    <title>停车纪录</title>
     <script src="/global/stylesheets/common.scss.js"></script>
-    <script src="/wechat-view/ParkingPaymentOverTime/main.scss.js"></script>
+    <script src="/wechat-view/parkingRecordDetail/main.scss.js"></script>
 </head>
 
 <body>
     <div class="ui relaxed divided list">
+        <div class="item">
+            <div class="content">
+                <div class="title">订单编号</div>
+                <div class="value">BC12345120456</div>
+            </div>
+        </div>
         <div class="item">
             <div class="content">
                 <div class="title">车牌号码</div>
@@ -20,19 +26,37 @@
         </div>
         <div class="item">
             <div class="content">
-                <div class="title">進场时间</div>
+                <div class="title">停车场</div>
+                <div class="value">陆家嘴国购停车场</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="content">
+                <div class="title">进场时间</div>
                 <div class="value">2015/8/21 15:20:00</div>
             </div>
         </div>
         <div class="item">
             <div class="content">
-                <div class="title">停車时长</div>
+                <div class="title">停车时长</div>
                 <div class="value">1小时12分钟</div>
             </div>
         </div>
         <div class="item">
             <div class="content">
-                <div class="title">統計费用</div>
+                <div class="title">是否預約訂單</div>
+                <div class="value">否</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="content">
+                <div class="title">是否已開收據</div>
+                <div class="value">否</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="content">
+                <div class="title">统计费用</div>
                 <div class="value green">￥10.00</div>
             </div>
         </div>
@@ -44,15 +68,11 @@
         </div>
         <div class="item">
             <div class="content">
-                <div class="title large">結算金額</div>
-                <div class="value green large">￥10.00</div>
+                <div class="title large">支付金额</div>
+                <div class="value green large">￥5.00</div>
             </div>
         </div>
     </div>
-    <form class="ui form">
-        <button id="PayToLeave" class="fluid ui button button-green" type="submit">付费离场</button>
-    </form>
-    <p class="hint">eGo提示: 付费结束後未在15分钟内驶离停车场可能产生额外费用喔!</p>
 </body>
 
 </html>
