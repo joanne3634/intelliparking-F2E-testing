@@ -144,10 +144,25 @@ exports = module.exports = function(app) {
                 payment_total: "10.00"
             }]
         });
-        router.get('/test',function*(next){
+
+        router.get('/paychoice/carnumbers', function*(next) {
+            this.body = [{
+                carnumbers: "2"
+            }]
+        });
+
+        router.get('/paychoice/license', function*(next) {
+            this.body = [{
+                carlicense: "京A BC123"
+            }, {
+                carlicense: "京B BC123"
+            }]
+        });
+
+        router.get('/test', function*(next) {
             var parkingRecord_detail = yield this.get('/parkingRecord/detail');
             parkingRecord_detail = JSON.parse(parkingRecord_detail.body);
-            console.log( parkingRecord_detail );
+            console.log(parkingRecord_detail);
         });
     });
 }
