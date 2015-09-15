@@ -1,4 +1,17 @@
 var $ = require('jquery');
+var dust = require('dust');
+
+var template = require("wechat-view/car/car-license.dust");
+dust.loadSource(template);
+$.getJSON('/wechat-view/car/carlicense').success(function(data){
+    data.forEach(function(el){
+        dust.render('app/view/wechat-view/car/car-license', el,function(err, html){
+            $('#car-licenses')[0].insertAdjacentHTML('beforeend', html);
+        })
+    })
+})
+
+
 
 $('#CarCreateForm').on('submit',function(e){
     e.preventDefault();

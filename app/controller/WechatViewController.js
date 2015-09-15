@@ -159,6 +159,17 @@ exports = module.exports = function(app) {
             }]
         });
 
+        router.get('/car/carlicense', function*(next) {
+            this.body = [{
+                dataID: "id1",
+                CarLicenseId: "京A BC123"
+            }, {
+                 dataID: "id2",
+                CarLicenseId: "京B BC123"
+            }]
+        });
+
+
         router.get('/test', function*(next) {
             var parkingRecord_detail = yield this.get('/parkingRecord/detail');
             parkingRecord_detail = JSON.parse(parkingRecord_detail.body);
