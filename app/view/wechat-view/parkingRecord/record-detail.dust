@@ -1,0 +1,62 @@
+<div class="item">
+    <div class="content">
+        <div class="title">订单编号</div>
+        <div class="value">{parkingRecord_id}</div>
+    </div>
+</div>
+<div class="item">
+    <div class="content">
+        <div class="title">车牌号码</div>
+        <div class="value large">{carlicense}</div>
+    </div>
+</div>
+<div class="item">
+        <div class="content">
+            <div class="title">停车场</div>
+            <div class="value">{parkinglot}</div>
+        </div>
+    </div>
+<div class="item">
+    <div class="content">
+        <div class="title">进场时间</div>
+        <div class="value">{entranceTimeStamp}</div>
+    </div>
+</div>
+<div class="item">
+    <div class="content">
+        <div class="title">停車时长</div>
+        <div class="value">{parkingTime}</div>
+    </div>
+</div>
+<div class="item">
+    <div class="content">
+        <div class="title">是否預約訂單</div>
+        <div class="value">{?preOrder}是{:else}否{/preOrder}</div>
+    </div>
+</div>
+<div class="item">
+    <div class="content">
+        <div class="title">是否已開收據</div>
+        <div class="value">{?invoice}是{:else}否{/invoice}</div>
+    </div>
+</div>
+<div class="item">
+    <div class="content">
+        <div class="title">統計费用</div>
+        <div class="value green">￥{payment}</div>
+    </div>
+</div>
+
+<div class="item">
+    <div class="content">
+        <div class="title">用优惠券</div>
+        <div class="value red">-￥{coupon_amount}</div>
+    </div>
+</div>
+
+<div class="item">
+    <div class="content">
+        <div class="title">支付金额</div>
+        <div class="value green large">￥{payment_total}</div>
+    </div>
+</div>

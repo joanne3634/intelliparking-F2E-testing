@@ -1,6 +1,12 @@
 $wechat-gray: #ebebeb;
 $wechat-green: #09bb07;
 
+$title-red: 
+$content-red: #ef5053;
+
+$line-gray: #ccc;
+$used-gray: #999;
+
 body {
 	margin: 0 0;
     padding: 15px;
@@ -10,11 +16,11 @@ body {
 .ui.button.button-green {
     background-color: $wechat-green;
     color: #fff;
-     width: 100%;
+    width: 100%;
 }
 .ui.button.button-gray {
     background-color: #999;
-    color:#fff;
+    color: #fff;
     width: 100%;
 }
 input{
