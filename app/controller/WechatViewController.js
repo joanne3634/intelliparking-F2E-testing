@@ -6,83 +6,93 @@ var WechatAPI = require('co-wechat-api'),
 exports = module.exports = function(app) {
     var m = app.models;
     app.group('/wechat-view', function(router) {
-        router.get('/coupons/use', function*(next) {
+        router.get('/coupons', function*(next) {
             this.body = [{
                 header: "1 hr Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/85.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "15min Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/85.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "45min Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/85.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "2hr Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/85.jpg"
-            }]
-        });
-        router.get('/coupons/history', function*(next) {
-            this.body = [{
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
+            },{
                 header: "1 hr Free",
+                usedStatus: true,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "15min Free",
+                usedStatus: true,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "45min Free",
+                usedStatus: true,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "2hr Free",
+                usedStatus: true,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }]
         });
 
         router.get('/coupons/parkingPayment', function*(next) {
             this.body = [{
                 header: "1 hr Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "15min Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "45min Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }, {
                 header: "2hr Free",
+                usedStatus: false,
                 description: "国购停车场限定",
-                meta: "Expired Date 2015-12-31",
-                images: "/images/95.jpg"
+                meta: "2015-12-31 12:00AM",
+                images: "kuogo_logo.png"
             }]
         });
-
+        
+        // param [overTime] true: 超時停車  
         router.get('/parkingPayment', function*(next) {
             this.body = [{
                 carlicense: "京A BC123",
                 entranceTimeStamp: "2015/8/21 15:20:00",
                 parkingTime: "1小时12分钟",
-                overTime: false,
+                overTime: true,
                 payment: "20.00",
                 coupon: true,
                 coupon_id: "Af3322",

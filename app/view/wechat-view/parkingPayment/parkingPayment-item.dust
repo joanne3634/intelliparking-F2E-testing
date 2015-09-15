@@ -20,7 +20,7 @@
     <div class="item">
         <div class="content">
             <div class="title">統計费用</div>
-            <div class="value green">￥{payment}</div>
+            <div class="value red"><span class="yen">￥</span>{payment}</div>
         </div>
     </div>
 
@@ -29,13 +29,13 @@
     <div class="item">
         <div class="content">
             <div class="title">用优惠券</div>
-            <div class="value red">-￥{coupon_amount}</div>
+            <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
         </div>
     </div>
     <div class="item">
         <div class="content">
             <div class="title">已付費用</div>
-            <div class="value red">-￥{paid}</div>
+            <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{paid}</div>
         </div>
     </div>
 
@@ -50,7 +50,7 @@
                     点击修改
                     <i class="fa fa-angle-right fa-lg"></i></span>
                 </div>
-                <div class="value red">-￥{coupon_amount}</div>
+                <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
             </div>
         </a>
     </div>
@@ -60,7 +60,7 @@
     <div class="item">
         <div class="content">
             <div class="title">結算金額</div>
-            <div class="value green large">￥{payment_total}</div>
+            <div class="value red large"><span class="yen">￥</span>{payment_total}</div>
         </div>
     </div>
 

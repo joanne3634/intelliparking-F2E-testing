@@ -4,10 +4,8 @@
 
 @import "../../global/stylesheets/components/button";
 @import "../../global/stylesheets/components/list";
+@import "../../global/stylesheets/common";
 
-body{
-    background-color: #fff;
-}
 .content .title{
     @include span-columns(5);
     @include shift(1);
@@ -25,7 +23,7 @@ body{
 }
 
 .content .value.green{
-    color: green;
+    color: $wechat-green;
 }
 p.hint{
     padding-top: 10px;
@@ -36,6 +34,6 @@ p.hint{
     padding-bottom: .7rem;
 }
 
-.content .large {
+.content .red.bold {
     font-weight: bold;
 }

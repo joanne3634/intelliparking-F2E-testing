@@ -3,17 +3,14 @@ var dust = require('dust');
 
 var template = require("wechat-view/coupons/coupon-item.dust");
 dust.loadSource(template);
-$.getJSON('/wechat-view/coupons/use').success(function(data){
+$.getJSON('/wechat-view/coupons').success(function(data){
     data.forEach(function(el){
         dust.render('app/view/wechat-view/coupons/coupon-item', el,function(err, html){
-            $('#coupon-list-use')[0].insertAdjacentHTML('beforeend', html);
-        })
-    })
-})
-$.getJSON('/wechat-view/coupons/history').success(function(data){
-    data.forEach(function(el){
-        dust.render('app/view/wechat-view/coupons/coupon-item', el,function(err, html){
-            $('#coupon-list-history')[0].insertAdjacentHTML('beforeend', html);
+            if(el['usedStatus']){
+                $('#coupon-list-history')[0].insertAdjacentHTML('beforeend', html);
+            }else{
+                $('#coupon-list-use')[0].insertAdjacentHTML('beforeend', html);
+            }
         })
     })
 })

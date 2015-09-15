@@ -1,8 +1,8 @@
 $wechat-gray: #ebebeb;
 $wechat-green: #09bb07;
 
-$title-red: 
-$content-red: #ef5053;
+$title-red: #ef5053;
+$content-red: #f00;
 
 $line-gray: #ccc;
 $used-gray: #999;
@@ -25,4 +25,29 @@ body {
 }
 input{
 	border-radius: 0px!important;
+}
+
+.used-gray{
+    color: $used-gray;
+}
+.content-red{
+    color: $content-red ;
+}
+
+.fa-angle-right{
+    padding-left: 3px;
+    color: #b7b5b5;
+    top: -2px;
+    position: relative;
+}
+
+.yen{
+    top: 1px;
+    left:2px;
+    position: relative;
+}
+.minus{
+    top: -1px;
+    position: relative;
+    left: 3px;
 }

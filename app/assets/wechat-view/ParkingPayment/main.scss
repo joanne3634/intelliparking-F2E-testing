@@ -3,6 +3,8 @@
 @import "../../global/stylesheets/neat/neat";
 @import "../../global/stylesheets/components/button";
 @import "../../global/stylesheets/components/list";
+@import "../../global/stylesheets/common";
+
 body {
     background-color: #fff;
 }
@@ -15,6 +17,11 @@ body {
 
 .content .value {
     @include span-columns(6);
+}
+
+.large span.yen{
+    top: 3px;
+    left: 4px;
 }
 
 .edit .content .title {
@@ -32,19 +39,15 @@ body {
 }
 
 .content .value.red {
-    color: red;
+    color: $content-red;
 }
 
 .content .value.green {
-    color: green;
+    color: $wechat-green;
 }
 
-.content .large {
-    font-weight: bold;
-}
-
-.content .value.green.large {
-    font-size: 30px;
+.content .value.red.large {
+    font-size: 34px;
 }
 
 p.hint {
@@ -65,10 +68,6 @@ p.hint {
 .ui.relaxed.list:not(.horizontal) .item {
     padding-top: .8rem;
     padding-bottom: .8rem;
-}
-
-.fa {
-    color: #b7b5b5;
 }
 
 .list .item a {

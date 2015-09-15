@@ -2,16 +2,16 @@
     <a href="#">
         <div class="content">
             <div class="card-img">
-                <img src="{images}">
+                <img src="/images/{images}">
             </div>
-            <div class="header">
+            <div class="header {?usedStatus} used-gray {/usedStatus}">
                 {header}
             </div>
-            <div class="description">
+            <div class="description {?usedStatus} used-gray {/usedStatus}">
                 {description}
             </div>
-            <div class="meta">
-                {meta}
+            <div class="meta {?usedStatus} content-red {/usedStatus}">
+                {^usedStatus} 失效時間: {meta} {:else} 已使用 {/usedStatus}
             </div>
         </div>
     </a>

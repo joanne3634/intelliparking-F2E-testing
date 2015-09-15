@@ -43,20 +43,20 @@
 <div class="item">
     <div class="content">
         <div class="title">統計费用</div>
-        <div class="value green">￥{payment}</div>
+        <div class="value red"><span class="yen">￥</span>{payment}</div>
     </div>
 </div>
 
 <div class="item">
     <div class="content">
         <div class="title">用优惠券</div>
-        <div class="value red">-￥{coupon_amount}</div>
+        <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
     </div>
 </div>
 
 <div class="item">
     <div class="content">
         <div class="title">支付金额</div>
-        <div class="value green large">￥{payment_total}</div>
+        <div class="value red bold"><span class="yen">￥</span>{payment_total}</div>
     </div>
 </div>
