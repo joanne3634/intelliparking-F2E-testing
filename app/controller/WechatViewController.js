@@ -58,34 +58,6 @@ exports = module.exports = function(app) {
             }]
         });
 
-        router.get('/coupons/parkingPayment', function*(next) {
-            this.body = [{
-                header: "1 hr Free",
-                usedStatus: false,
-                description: "国购停车场限定",
-                meta: "2015-12-31 12:00AM",
-                images: "kuogo_logo.png"
-            }, {
-                header: "15min Free",
-                usedStatus: false,
-                description: "国购停车场限定",
-                meta: "2015-12-31 12:00AM",
-                images: "kuogo_logo.png"
-            }, {
-                header: "45min Free",
-                usedStatus: false,
-                description: "国购停车场限定",
-                meta: "2015-12-31 12:00AM",
-                images: "kuogo_logo.png"
-            }, {
-                header: "2hr Free",
-                usedStatus: false,
-                description: "国购停车场限定",
-                meta: "2015-12-31 12:00AM",
-                images: "kuogo_logo.png"
-            }]
-        });
-        
         // param [overTime] true: 超時停車  
         router.get('/parkingPayment', function*(next) {
             this.body = [{
@@ -177,13 +149,6 @@ exports = module.exports = function(app) {
                  dataID: "id2",
                 CarLicenseId: "京B BC123"
             }]
-        });
-
-
-        router.get('/test', function*(next) {
-            var parkingRecord_detail = yield this.get('/parkingRecord/detail');
-            parkingRecord_detail = JSON.parse(parkingRecord_detail.body);
-            console.log(parkingRecord_detail);
         });
     });
 }
