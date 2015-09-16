@@ -13,7 +13,7 @@
     <div id="mask"></div>
     <p>如果您的车牌被恶意绑定，可以通过上传车牌照片和机动车行驶证照片进行车牌认证。由此给您带来的不便我们由衷地表示歉意。
     </p>
-    <form id="CarCreateForm" class="ui form">
+    <form id="CarCreateForm" name="CarCreateForm" class="ui form">
         <div class="field">
             <div class="ui dropdown selection" tabindex="0">
                 <select id="CarCode">
@@ -151,14 +151,14 @@
         </div>
         <div class="field inputWrapper">
             上传车牌照片
-            <input class="fileInput hidden" type="file" name="file3" />
+            <input class="fileInput hidden" type="file" name="carlicensePhoto" id="carlicensePhoto"/>
         </div>
         <div id="DrivingLicense" class="photo-display">
             <img src="/images/drivinglicense.jpg" alt="">
         </div>
         <div class="field inputWrapper">
             上传机动车行驶证照片
-            <input class="fileInput hidden" type="file" name="file3" />
+            <input class="fileInput hidden" type="file" name="carDrivePhoto" id="carDrivePhoto" />
         </div>
         <div class="field">
             <button id="CarAuthSubmit" class="fluid ui button button-green" type="submit">提交申请</button>

@@ -1,1 +1,13 @@
-<button class="fluid ui button botton-white">{carlicense}</button>
+{@eq key=carCount value=0}
+	<p>系统未检测到您有车辆在停车场中，<br>您可以：</p>
+	<a href="car.html">
+		<button class="fluid ui button botton-white">新增车辆</button>
+	</a>
+{:else}
+	<p>系统检测到您有<span id="CarNumber">{carCount}</span>辆车在停车场中，<br>请选择付费车辆：</p>
+	{#carLicenses} 
+	<a href="ParkingPayment.html?carlicenseId={carlicenseId}">
+		<button class="fluid ui button botton-white">{carlicense}</button>
+	</a>
+	{/carLicenses}
+{/eq}

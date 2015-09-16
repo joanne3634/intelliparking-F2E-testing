@@ -3,13 +3,14 @@
 @import "../../global/stylesheets/neat/neat";
 @import "../../global/stylesheets/common";
 
-article {
+a article {
     margin-left: -15px;
     margin-right: -15px;
     padding: 15px;
     margin-bottom: 15px;
     background-color: #fff;
     @include clearfix;
+    color: #333;
     .left {
         float: left;
         .serial-number {

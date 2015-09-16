@@ -11,18 +11,17 @@ $.getJSON('/wechat-view/car/carlicense').success(function(data){
     })
 })
 
-
-
 $('#CarCreateForm').on('submit',function(e){
     e.preventDefault();
 
-    var form_valid = document.getElementById('CarNumber');
+    var CarNumber = document.getElementById('CarNumber').value;
     
-    /* 不足5位 */
-    if(form_valid.value.length != 5){
-        Alert('请输入正确的手机号码','好的');
+    /* 不足5位 限制數字以及大寫英文 */
+    if( !/[0-9A-Z]{5}/.test( CarNumber ) ){
+        Alert('请输入正确的车牌号','好的');
         return false;
     }
+
     /* 车牌已被绑定 */
     var carLicenseBindingStatus = true;
 

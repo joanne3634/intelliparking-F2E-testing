@@ -31,7 +31,7 @@ exports = module.exports = function(app) {
                 description: "国购停车场限定",
                 meta: "2015-12-31 12:00AM",
                 images: "kuogo_logo.png"
-            },{
+            }, {
                 header: "1 hr Free",
                 usedStatus: true,
                 description: "国购停车场限定",
@@ -135,9 +135,17 @@ exports = module.exports = function(app) {
 
         router.get('/paychoice/license', function*(next) {
             this.body = [{
-                carlicense: "京A BC123"
-            }, {
-                carlicense: "京B BC123"
+                "carCount": 2,
+                "carLicenses": [
+                    {   
+                        "carlicenseId": 1,
+                        "carlicense": "京A BC123"
+                    }, {
+                        "carlicenseId": 2,
+                        "carlicense": "京B BC123"
+                    }
+                ]
+
             }]
         });
 
@@ -146,7 +154,7 @@ exports = module.exports = function(app) {
                 dataID: "id1",
                 CarLicenseId: "京A BC123"
             }, {
-                 dataID: "id2",
+                dataID: "id2",
                 CarLicenseId: "京B BC123"
             }]
         });
