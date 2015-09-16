@@ -44,7 +44,7 @@ $('#RegisterForm').on('submit', function(e) {
 
 });
 
-var c = 10;
+var c = 60;
 var t;
 
 $(document).on('click', "#GetCode", function(e) {
@@ -66,7 +66,7 @@ function timedCount() {
 }
 
 function stopCount() {
-    c = 10;
+    c = 60;
     document.getElementById('GetCode').disabled = false;
     setTimeout("document.getElementById('GetCode').innerHTML='获取验证码'", 0);
     clearTimeout(t);

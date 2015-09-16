@@ -5,15 +5,15 @@ $('#CarCreateForm').on('submit', function(e) {
 
     var CarNumber = document.getElementById('CarNumber').value;
     /* 不足5位 限制數字以及大寫英文*/
-    if (!/[0-9A-Z]{5}/.test(CarNumber)) {
+    if (!/[0-9A-Za-z]{5}/.test(CarNumber)) {
         Alert('请输入正确的车牌号', '好的');
         return false;
     }
     /* 车牌已被绑定 */
-    if(form_valid.length != 5){
-        Confirm('该车牌号已被其他帐号添加,您可以进行车牌认证以找回','稍後认证','马上认证');
-        return false;
-    }
+    // if(form_valid.length != 5){
+    //     Confirm('该车牌号已被其他帐号添加,您可以进行车牌认证以找回','稍後认证','马上认证');
+    //     return false;
+    // }
 
     var f = document.CarCreateForm;
     if ( f.carlicensePhoto.value.length == 0 ){
