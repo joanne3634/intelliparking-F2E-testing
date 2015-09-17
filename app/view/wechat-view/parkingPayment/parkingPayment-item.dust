@@ -1,79 +1,70 @@
 <div class="ui relaxed divided list">
-    <div class="item">
-        <div class="content">
-            <div class="title">车牌号码</div>
-            <div class="value large">{carlicense}</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="content">
-            <div class="title">進场时间</div>
-            <div class="value">{entranceTimeStamp}</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="content">
-            <div class="title">停車时长</div>
-            <div class="value">{parkingTime}</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="content">
-            <div class="title">統計费用</div>
-            <div class="value red"><span class="yen">￥</span>{payment}</div>
-        </div>
-    </div>
-
-    {?overTime} 
-
-    <div class="item">
-        <div class="content">
-            <div class="title">用优惠券</div>
-            <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="content">
-            <div class="title">已付費用</div>
-            <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{paid}</div>
-        </div>
-    </div>
-
-    {:else} 
-
-    <div class="item edit">
-        <a href="/UseCouponForParkingPayment.html">
-            <div class="content">
-                <div class="title">
-                    用优惠券
-                    <span class="gray">
-                    点击修改
-                    <i class="fa fa-angle-right fa-lg"></i></span>
-                </div>
-                <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
-            </div>
-        </a>
-    </div>
-
-    {/overTime}
-
-    <div class="item">
-        <div class="content">
-            <div class="title">結算金額</div>
-            <div class="value red large"><span class="yen">￥</span>{payment_total}</div>
-        </div>
-    </div>
- <div class="item">
-        <div class="field">
-        <div class="ui checkbox">
-          <input type="checkbox" tabindex="0" class="hidden">
-          <label>使用馀额(当前馀额)<i class="fa fa-jpy"></i>100.0</label>
-        </div>
+   <div class="item">
+      <div class="content">
+         <div class="title">车牌号码</div>
+         <div class="value large">{carlicense}</div>
       </div>
-    </div>
-
+   </div>
+   <div class="item">
+      <div class="content">
+         <div class="title">進场时间</div>
+         <div class="value">{entranceTimeStamp}</div>
+      </div>
+   </div>
+   <div class="item">
+      <div class="content">
+         <div class="title">停車时长</div>
+         <div class="value">{parkingTime}</div>
+      </div>
+   </div>
+   <div class="item">
+      <div class="content">
+         <div class="title">統計费用</div>
+         <div class="value red"><span class="yen">￥</span>{payment}</div>
+      </div>
+   </div>
+   {?overTime} 
+   <div class="item">
+      <div class="content">
+         <div class="title">用优惠券</div>
+         <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
+      </div>
+   </div>
+   <div class="item">
+      <div class="content">
+         <div class="title">已付費用</div>
+         <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{paid}</div>
+      </div>
+   </div>
+   {:else} 
+   <div class="item edit">
+      <a href="/UseCouponForParkingPayment.html">
+         <div class="content">
+            <div class="title">
+               用优惠券
+               <span class="gray">
+               点击修改
+               <i class="fa fa-angle-right fa-lg"></i></span>
+            </div>
+            <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{coupon_amount}</div>
+         </div>
+      </a>
+   </div>
+   {/overTime}
+   <div class="item">
+      <div class="content">
+         <div class="title">結算金額</div>
+         <div class="value red large"><span class="yen">￥</span>{payment_total}</div>
+      </div>
+   </div>
+   <div class="item">
+      <div class="ui checkbox">
+         <input type="checkbox" name="balance">
+         <label class="checkbox-label">使用馀额(当前馀额)<i class="fa fa-jpy"></i>100.0</label>
+      </div>
+   </div>
 </div>
 <form class="ui form">
-    <button id="PayToLeave" class="fluid ui button button-green" type="submit">付费离场</button>
+   <button id="PayToLeave" class="fluid ui button button-green" type="submit">付费离场</button>
 </form>
 <p class="hint">付费结束後未在15分钟内驶离停车场可能产生额外费用喔!</p>
