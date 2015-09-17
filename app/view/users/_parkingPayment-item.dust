@@ -42,7 +42,7 @@
     {:else} 
 
     <div class="item edit">
-        <a href="/UseCouponForParkingPayment.html">
+        <a href="/couponForPay">
             <div class="content">
                 <div class="title">
                     用优惠券
@@ -63,7 +63,7 @@
             <div class="value red large"><span class="yen">￥</span>{payment_total}</div>
         </div>
     </div>
-    
+
     <div class="item">
         <div class="ui checkbox">
             <input type="checkbox" name="balance">

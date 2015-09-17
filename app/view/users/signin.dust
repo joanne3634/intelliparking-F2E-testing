@@ -2,11 +2,10 @@
 {<title}eGo停车注册{/title}
 {<styles}
 <script>
-    $script(['/wechat-view/car/main.scss.js'])
+    $script(['/users/signin/main.scss.js','/global/stylesheets/dialog.scss.js'])
 </script>
 {/styles}
 {<content}
-<div id="mask"></div>
     <!--Head of Customs Dialog-->
     <div id="dialogoverlay"></div>
     <div id="dialogbox">
@@ -38,7 +37,7 @@
 {<js}
     <script>
         $script.ready('bundle', function(){
-            $script(['{@static src="/users/signin.js" /}'])
+            $script(['{@static src="/users/signin/main.js" /}'])
         });
     </script>
 {/js}
