@@ -74,29 +74,29 @@ gulp.task('deploy', ['build', 'buildgz'], function() {
         }))
         .pipe(require('gulp-s3')(config, options));
 });
-// gulp.task('httpServer', function() {
-//     process.env.RUNNING = "local";
-//     var App = require('./index.js');
-//     var HTTPServer = new App();
-//     HTTPServer.start(function() {
-//         console.log('info', 'server listening');
-//     });
-// })
-// gulp.task('server', ['httpServer', 'build'],function(){
-//     return gulp.watch(['app/assets/**', 'app/view/**'], ["cleangz", "build"]);
-// });
-
-gulp.task('server', ['build'], function() {
-  process.env.RUNNING = "local";
-  var App = require('./index.js');
-  var HTTPServer = new App();
-  HTTPServer.start(function(){
-    console.log('info', 'server listening');
-  });
-  watchMode = true;
-  return gulp.watch(['app/assets/**', 'app/view/**'], ["cleangz", "build"]);
-  // function(){
-  //    if (timeout){clearTimeout(timeout);}
-  //    timeout = setTimeout(function(){livereload.changed();}, 30);
-  // });
+gulp.task('httpServer', function() {
+    process.env.RUNNING = "local";
+    var App = require('./index.js');
+    var HTTPServer = new App();
+    HTTPServer.start(function() {
+        console.log('info', 'server listening');
+    });
+})
+gulp.task('server', ['httpServer', 'build'],function(){
+    return gulp.watch(['app/assets/**', 'app/view/**'], ["cleangz", "build"]);
 });
+
+// gulp.task('server', ['build'], function() {
+//   process.env.RUNNING = "local";
+//   var App = require('./index.js');
+//   var HTTPServer = new App();
+//   HTTPServer.start(function(){
+//     console.log('info', 'server listening');
+//   });
+//   watchMode = true;
+//   return gulp.watch(['app/assets/**', 'app/view/**'], ["cleangz", "build"]);
+//   // function(){
+//   //    if (timeout){clearTimeout(timeout);}
+//   //    timeout = setTimeout(function(){livereload.changed();}, 30);
+//   // });
+// });
