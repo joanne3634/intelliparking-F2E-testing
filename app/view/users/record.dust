@@ -1,0 +1,15 @@
+{>"common/mobile.layout.dust"/}
+{<title}停车记录{/title}
+{<styles}
+<script>
+    $script(['/users/record/main.scss.js'])
+</script>
+{/styles}
+{<content}{/content}
+{<js}
+    <script>
+        $script.ready('bundle', function(){
+            $script(['{@static src="/users/record/main.js" /}'])
+        });
+    </script>
+{/js}

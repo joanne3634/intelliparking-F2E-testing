@@ -1,0 +1,15 @@
+{>"common/mobile.layout.dust"/}
+{<title}付停车费{/title}
+{<styles}
+<script>
+    $script(['/users/pay/main.scss.js'])
+</script>
+{/styles}
+{<content}{/content}
+{<js}
+    <script>
+        $script.ready('bundle', function(){
+            $script(['{@static src="/users/pay/main.js" /}'])
+        });
+    </script>
+{/js}

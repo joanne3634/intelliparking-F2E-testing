@@ -1,0 +1,27 @@
+{>"common/mobile.layout.dust"/}
+{<title}{/title}
+{<styles}
+<script>
+    $script(['/users/couponForPay/main.scss.js'])
+</script>
+{/styles}
+{<content}
+    <div id="payment-coupons-list" class="ui cards">
+        <div class="card useless">
+            <a href="#">
+                <div class="content">
+                    <div class="useless-meta">
+                        不使用优惠券
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+{/content}
+{<js}
+    <script>
+        $script.ready('bundle', function(){
+            $script(['{@static src="/users/couponForPay/main.js" /}'])
+        });
+    </script>
+{/js}

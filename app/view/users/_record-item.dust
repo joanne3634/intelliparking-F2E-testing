@@ -1,0 +1,14 @@
+<a href="recordDetail?parkingRecordNumber={number}">
+    <article>
+        <div class="left">
+            <div class="serial-number"> 编号：<span>{number}</span></div>
+            <div class="parkingPlace">{parkingplace}</div>
+            <div class="costTime">{costtime}</div>
+        </div>
+        <div class="right">
+            <div class="date">{date}</div>
+            <div class="carNumber">{carlicense}</div>
+            <div class="costMoney">{feed}</div>
+        </div>
+    </article>
+</a>
