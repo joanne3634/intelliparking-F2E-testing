@@ -22,7 +22,8 @@ program
                     {
                         "type": "view",
                         "name": "付停车费",
-                        "url": "${baseurl}/static/html/paychoice.html"
+                        // "url": "${baseurl}/static/html/paychoice.html"
+                        "url": "${baseurl}/wechat/action?toUrl=/wechat-view/paychoice.html"
                     },
                     {
                         "name": "个人中心",

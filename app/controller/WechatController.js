@@ -11,7 +11,7 @@ var WechatAuth = require('../../lib/wechat-auth');
 
 exports = module.exports = function(app) {
     var config = readYaml.sync(require('path').resolve(app._basePath,"./config/wechat.yml"))[app._app.env];
-    var wechatReply = new WechatReply(config.token), wechatAuth = new WechatAuth();
+    var wechatReply = new WechatReply(config.token), wechatAuth = new WechatAuth(app);
     var domain = config.domain;
 
     app.passport.use(new WechatStrategy({
@@ -22,7 +22,7 @@ exports = module.exports = function(app) {
         scope: ['snsapi_base'],
         authorizationURL: "https://open.weixin.qq.com/connect/oauth2/authorize",
         tokenURL: "https://api.weixin.qq.com/sns/oauth2/access_token",
-        defaultRedirect: "/"
+        defaultRedirect: "/html/binding.html"
     }, wechatAuth));
 
     app.group('/wechat', function(router) {

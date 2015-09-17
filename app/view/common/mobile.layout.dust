@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,minimal-ui">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="address=no">
@@ -12,31 +12,54 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
-<title>{+title}易购停车{/title}</title>
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<title>{+title}eGo停车{/title}</title>
+<script src="//cdn.bootcss.com/script.js/2.5.7/script.min.js"></script>
+<script>
+  $script(['/wechat-view/binding/main.scss.js','/global/stylesheets/dialog.scss.js']);
+</script>
 {+styles}
 {/styles}
 </head>
 <body>
-{@env env="production"}
-
-{/env}
 <script>
 document.body.className += " js";
 </script>
 {+content}
 {/content}
-<script src="{@static src="/global/stylesheets/all.scss.js"/}" defer></script>
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/hammer.js/2.0.4/hammer.min.js"></script>
-<script src="{@static src="/vendor/jquery.hammer.js"/}"></script>
-<script src="//cdn.bootcss.com/dustjs-linkedin/2.7.2/dust-core.min.js"></script>
-<script src="//cdn.bootcss.com/dustjs-helpers/1.7.3/dust-helpers.min.js"></script>
-<script src="//cdn.bootcss.com/socket.io/1.3.6/socket.io.min.js"></script>
-<script src="//cdn.bootcss.com/moment.js/2.10.6/moment.min.js"></script>
-<script src="//cdn.bootcss.com/lodash.js/3.10.1/lodash.min.js"></script>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="{@static src="/global/global.js"/}"></script>
+<script>
+  function createStyle(href, rel, type) {
+  	var l = document.createElement('link');
+  	l.rel = rel;
+  	l.href = href;
+  	l.type = type;
+  	var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+  }
+  var cb = function() {
+  	createStyle('https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css', 'stylesheet', 'text/css');
+  	createStyle('https://fonts.googleapis.com/css?family=Roboto', 'stylesheet', 'text/css');
+  };
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(cb);
+  else window.addEventListener('load', cb);
+</script>
+<script> 
+  $script([
+  '//cdn.bootcss.com/jquery/1.11.3/jquery.min.js',
+  '//cdn.bootcss.com/hammer.js/2.0.4/hammer.min.js',
+  '//cdn.bootcss.com/dustjs-linkedin/2.7.2/dust-core.min.js',
+  '//cdn.bootcss.com/socket.io/1.3.6/socket.io.min.js',
+  '//cdn.bootcss.com/moment.js/2.10.6/moment.min.js',
+  '//cdn.bootcss.com/lodash.js/3.10.1/lodash.min.js',
+  '//res.wx.qq.com/open/js/jweixin-1.0.0.js'
+  ], function(){
+    $script([
+      '/vendor/jquery.hammer.js',
+      '/global/javascripts/jquery.mobile.custom.min.js',
+      '//cdn.bootcss.com/dustjs-helpers/1.7.3/dust-helpers.min.js'
+    ], 'bundle');
+  });
+</script>
 {+js}
 {/js}
 </body>

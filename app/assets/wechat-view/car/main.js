@@ -10,6 +10,8 @@ $.getJSON('/wechat-view/car/carlicense').success(function(data){
         })
     })
 })
+/* 車牌輸入強迫轉成大寫 */
+$('#CarNumber').keyup(function() {  this.value = this.value.toUpperCase(); });
 
 $('#CarCreateForm').on('submit',function(e){
     e.preventDefault();
@@ -17,7 +19,7 @@ $('#CarCreateForm').on('submit',function(e){
     var CarNumber = document.getElementById('CarNumber').value;
     
     /* 不足5位 限制數字以及英文 */
-    if( !/[0-9A-Za-z]{5}/.test( CarNumber ) ){
+    if( !/[0-9A-Z]{5}/.test( CarNumber ) ){
         Alert('请输入正确的车牌号','好的');
         return false;
     }
