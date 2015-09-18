@@ -33,8 +33,7 @@ define(['jquery'], function($) {
             return false;
         }
     });
-
-    $('.ui.form.delete').on('submit', function(e) {
+    $(document).on('submit', ".ui.form.delete", function(e) {
         e.preventDefault();
 
         // console.log( form.carLicense.value );

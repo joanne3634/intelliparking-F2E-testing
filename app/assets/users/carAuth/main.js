@@ -1,4 +1,41 @@
 define(['jquery'], function($) {
+
+
+    /**
+     * 使用HTML5 File API, 來即時預覽image
+     */
+    $("#carlicensePhoto").change(function() {
+        var objUrl = getObjectURL(this.files[0]);
+        if (objUrl) {
+            $("#carlicenseImg").attr("src", objUrl);
+        }
+    });
+    $("#carDrivePhoto").change(function() {
+        var objUrl = getObjectURL(this.files[0]);
+        console.log("objUrl = " + objUrl);
+        if (objUrl) {
+            $("#drivinglicenseImg").attr("src", objUrl);
+        }
+    });
+
+
+    /**
+     * 建立一個可存取到該file的url
+     * PS: 瀏覽器必須支援HTML5 File API
+     */
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+
     /* 車牌輸入強迫轉成大寫 */
     $('#CarNumber').keyup(function() {
         this.value = this.value.toUpperCase();
@@ -78,7 +115,7 @@ define(['jquery'], function($) {
     }
 
     $(document).on('click', "#AlertURLButton", function(e) {
-        document.location = document.location.origin + '/carAuth.html';
+        document.location = document.location.origin + '/carAuth';
         document.getElementById('dialogbox').style.display = "none";
         document.getElementById('dialogoverlay').style.display = "none";
     });
@@ -104,7 +141,7 @@ define(['jquery'], function($) {
         document.getElementById('dialogoverlay').style.display = "none";
     });
     $(document).on('click', "#CustomConfirmRightButton", function(e) {
-        document.location = document.location.origin + '/carAuth.html';
+        document.location = document.location.origin + '/carAuth';
         document.getElementById('dialogbox').style.display = "none";
         document.getElementById('dialogoverlay').style.display = "none";
     });

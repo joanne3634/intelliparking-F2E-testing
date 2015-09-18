@@ -143,18 +143,18 @@
             <input id="CarNumber" type="text" name="carNumber" maxlength="5" placeholder="请输入车牌后5位">
         </div>
         <div id="CarLicense" class="photo-display">
-            <img src="/images/carlicense.jpg" alt="">
+            <img src="/images/carlicense.jpg" alt="" id="carlicenseImg">
         </div>
         <div class="field inputWrapper">
             上传车牌照片
-            <input class="fileInput hidden" type="file" name="carlicensePhoto" id="carlicensePhoto"/>
+            <input multiple="multiple"  class="fileInput hidden" type="file" name="carlicensePhoto" id="carlicensePhoto"/>
         </div>
         <div id="DrivingLicense" class="photo-display">
-            <img src="/images/drivinglicense.jpg" alt="">
+            <img src="/images/drivinglicense.jpg" alt="" id="drivinglicenseImg">
         </div>
         <div class="field inputWrapper">
             上传机动车行驶证照片
-            <input class="fileInput hidden" type="file" name="carDrivePhoto" id="carDrivePhoto" />
+            <input multiple="multiple"  class="fileInput hidden" type="file" name="carDrivePhoto" id="carDrivePhoto" />
         </div>
         <div class="field">
             <button id="CarAuthSubmit" class="fluid ui button button-green" type="submit">提交申请</button>

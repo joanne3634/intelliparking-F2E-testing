@@ -22,8 +22,7 @@ program
                     {
                         "type": "view",
                         "name": "付停车费",
-                        // "url": "${baseurl}/static/html/paychoice.html"
-                        "url": "${baseurl}/wechat/action?toUrl=/wechat-view/paychoice.html"
+                        "url": "${baseurl}/wechat/action?toUrl=/users/pay"
                     },
                     {
                         "name": "个人中心",
@@ -31,29 +30,29 @@ program
                             {
                                 "type": "view",
                                 "name": "我的优惠券",
-                                "url": "${baseurl}/static/html/coupon.html"
+                                "url": "${baseurl}/users/coupon"
                             },
                             {
                                 "type": "view",
                                 "name": "我的车辆",
-                                "url": "${baseurl}/static/html/car.html"
+                                "url": "${baseurl}/users/car"
                             },
                             {
                                 "type": "view",
                                 "name": "车牌认证",
-                                "url": "${baseurl}/static/html/carAuth.html"
+                                "url": "${baseurl}/users/carAuth"
                             },
                             {
                                 "type": "view",
                                 "name": "停车记录",
-                                "url": "${baseurl}/static/html/parkingRecord.html"
+                                "url": "${baseurl}/users/record"
                             }
                         ]
                     },
                     {
                         "type": "view",
                         "name": "使用帮助",
-                        "url": "${baseurl}/static/html/help.html"
+                        "url": "${baseurl}/users/help"
                     }
                 ]
             }`);
