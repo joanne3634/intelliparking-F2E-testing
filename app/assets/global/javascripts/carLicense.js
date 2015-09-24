@@ -30,14 +30,15 @@ jQuery(document).ready(function($) {
 
     $("#Sheng fieldset label").mousedown(function(event) {
         $(this).addClass("active").siblings().removeClass('active');
+        $(this).find('input#'+$(this)[0].htmlFor).attr('checked', 'checked');
         $(".default.text").text($(this).text());
         $("#Sheng").hide();
         $("#Abc").show();
-        // $("#mask").hide();
     });
 
     $("#Abc fieldset label").mousedown(function(event) {
         $(this).addClass("active").siblings().removeClass('active');
+        $(this).find('input#'+$(this)[0].htmlFor).attr('checked', 'checked');
         var getAbc = $(this).text();
         $(".default.text").append(getAbc);
         $("#Abc").hide();

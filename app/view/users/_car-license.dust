@@ -1,6 +1,6 @@
-<form class="ui form delete" id="{dataID}">
+<form method="post" action="/users/car/delete" class="ui form delete" id="{id}">
     <div class="fields">
-        <input readonly="" type="text" name="carLicense" value="{CarLicenseId}">
+        <input readonly="" type="text" name="carLicense" value="{registeredArea} {serial}">
         <button class="ui button car-delete" type="submit">删除</button>
     </div>
 </form>

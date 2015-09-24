@@ -12,7 +12,6 @@ define(['jquery'], function($) {
     });
     $("#carDrivePhoto").change(function() {
         var objUrl = getObjectURL(this.files[0]);
-        console.log("objUrl = " + objUrl);
         if (objUrl) {
             $("#drivinglicenseImg").attr("src", objUrl);
         }

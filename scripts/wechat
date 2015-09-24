@@ -30,22 +30,22 @@ program
                             {
                                 "type": "view",
                                 "name": "我的优惠券",
-                                "url": "${baseurl}/users/coupon"
+                                "url": "${baseurl}/wechat/action?toUrl=/users/coupon"
                             },
                             {
                                 "type": "view",
                                 "name": "我的车辆",
-                                "url": "${baseurl}/users/car"
+                                "url": "${baseurl}/wechat/action?toUrl=/users/car"
                             },
                             {
                                 "type": "view",
                                 "name": "车牌认证",
-                                "url": "${baseurl}/users/carAuth"
+                                "url": "${baseurl}/wechat/action?toUrl=/users/carAuth"
                             },
                             {
                                 "type": "view",
                                 "name": "停车记录",
-                                "url": "${baseurl}/users/record"
+                                "url": "${baseurl}/wechat/action?toUrl=/users/record"
                             }
                         ]
                     },

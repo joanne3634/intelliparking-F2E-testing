@@ -2,11 +2,12 @@
 {<title}我的车辆{/title}
 {<styles}
 <script>
-    $script(['/users/car/main.scss.js','/global/stylesheets/dialog.scss.js'])
+    $script(['/users/car/main.scss.js'])
 </script>
 {/styles}
 {<content}
     <div id="mask"></div>
+    <div class="errorMsg">{error}</div>
     <form id="CarCreateForm" class="ui form">
         <div class="fields">
             <div class="ui dropdown selection" tabindex="0">
@@ -18,128 +19,128 @@
             </div>
             <div id="Sheng" class="">
                 <fieldset>
-                    <label class="radioBtn active" for="radio1">
-                        <input type="radio" id="sradio1" name="area" />京</label>
+                    <label class="radioBtn active" for="sradio1">
+                        <input type="radio" id="sradio1" name="area" value="京"/>京</label>
                     <label class="radioBtn" for="sradio2">
-                        <input type="radio" id="sradio2" name="area" />津</label>
+                        <input type="radio" id="sradio2" name="area" value="津"/>津</label>
                     <label class="radioBtn" for="sradio3">
-                        <input type="radio" id="sradio3" name="area" />冀</label>
+                        <input type="radio" id="sradio3" name="area" value="冀"/>冀</label>
                     <label class="radioBtn" for="sradio4">
-                        <input type="radio" id="sradio4" name="area" />晋</label>
+                        <input type="radio" id="sradio4" name="area" value="晋"/>晋</label>
                     <label class="radioBtn" for="sradio5">
-                        <input type="radio" id="sradio5" name="area" />蒙</label>
+                        <input type="radio" id="sradio5" name="area" value="蒙"/>蒙</label>
                     <label class="radioBtn" for="sradio6">
-                        <input type="radio" id="sradio6" name="area" />辽</label>
+                        <input type="radio" id="sradio6" name="area" value="辽"/>辽</label>
                     <label class="radioBtn" for="sradio7">
-                        <input type="radio" id="sradio7" name="area" />吉</label>
+                        <input type="radio" id="sradio7" name="area" value="吉"/>吉</label>
                     <label class="radioBtn" for="sradio8">
-                        <input type="radio" id="sradio8" name="area" />黑</label>
+                        <input type="radio" id="sradio8" name="area" value="黑"/>黑</label>
                     <label class="radioBtn" for="sradio9">
-                        <input type="radio" id="sradio9" name="area" />沪</label>
+                        <input type="radio" id="sradio9" name="area" value="沪"/>沪</label>
                     <label class="radioBtn" for="sradio10">
-                        <input type="radio" id="sradio10" name="area" />苏</label>
+                        <input type="radio" id="sradio10" name="area" value="苏"/>苏</label>
                     <label class="radioBtn" for="sradio11">
-                        <input type="radio" id="sradio11" name="area" />浙</label>
+                        <input type="radio" id="sradio11" name="area" value="浙"/>浙</label>
                     <label class="radioBtn" for="sradio12">
-                        <input type="radio" id="sradio12" name="area" />皖</label>
+                        <input type="radio" id="sradio12" name="area" value="皖"/>皖</label>
                     <label class="radioBtn" for="sradio13">
-                        <input type="radio" id="sradio13" name="area" />闽</label>
+                        <input type="radio" id="sradio13" name="area" value="闽"/>闽</label>
                     <label class="radioBtn" for="sradio14">
-                        <input type="radio" id="sradio14" name="area" />赣</label>
+                        <input type="radio" id="sradio14" name="area" value="赣"/>赣</label>
                     <label class="radioBtn" for="sradio15">
-                        <input type="radio" id="sradio15" name="area" />鲁</label>
+                        <input type="radio" id="sradio15" name="area" value="鲁"/>鲁</label>
                     <label class="radioBtn" for="sradio16">
-                        <input type="radio" id="sradio16" name="area" />豫</label>
+                        <input type="radio" id="sradio16" name="area" value="豫"/>豫</label>
                     <label class="radioBtn" for="sradio17">
-                        <input type="radio" id="sradio17" name="area" />颚</label>
+                        <input type="radio" id="sradio17" name="area" value="颚"/>颚</label>
                     <label class="radioBtn" for="sradio18">
-                        <input type="radio" id="sradio18" name="area" />湘</label>
+                        <input type="radio" id="sradio18" name="area" value="湘"/>湘</label>
                     <label class="radioBtn" for="sradio19">
-                        <input type="radio" id="sradio19" name="area" />粤</label>
+                        <input type="radio" id="sradio19" name="area" value="粤"/>粤</label>
                     <label class="radioBtn" for="sradio20">
-                        <input type="radio" id="sradio20" name="area" />桂</label>
+                        <input type="radio" id="sradio20" name="area" value="桂"/>桂</label>
                     <label class="radioBtn" for="sradio21">
-                        <input type="radio" id="sradio21" name="area" />琼</label>
+                        <input type="radio" id="sradio21" name="area" value="琼"/>琼</label>
                     <label class="radioBtn" for="sradio22">
-                        <input type="radio" id="sradio22" name="area" />渝</label>
+                        <input type="radio" id="sradio22" name="area" value="渝"/>渝</label>
                     <label class="radioBtn" for="sradio23">
-                        <input type="radio" id="sradio23" name="area" />川</label>
+                        <input type="radio" id="sradio23" name="area" value="川"/>川</label>
                     <label class="radioBtn" for="sradio24">
-                        <input type="radio" id="sradio24" name="area" />贵</label>
+                        <input type="radio" id="sradio24" name="area" value="贵"/>贵</label>
                     <label class="radioBtn" for="sradio25">
-                        <input type="radio" id="sradio25" name="area" />云</label>
+                        <input type="radio" id="sradio25" name="area" value="云"/>云</label>
                     <label class="radioBtn" for="sradio26">
-                        <input type="radio" id="sradio26" name="area" />藏</label>
+                        <input type="radio" id="sradio26" name="area" value="藏"/>藏</label>
                     <label class="radioBtn" for="sradio27">
-                        <input type="radio" id="sradio27" name="area" />陕</label>
+                        <input type="radio" id="sradio27" name="area" value="陕"/>陕</label>
                     <label class="radioBtn" for="sradio28">
-                        <input type="radio" id="sradio28" name="area" />甘</label>
+                        <input type="radio" id="sradio28" name="area" value="甘"/>甘</label>
                     <label class="radioBtn" for="sradio29">
-                        <input type="radio" id="sradio29" name="area" />青</label>
+                        <input type="radio" id="sradio29" name="area" value="青"/>青</label>
                     <label class="radioBtn" for="sradio30">
-                        <input type="radio" id="sradio30" name="area" />宁</label>
+                        <input type="radio" id="sradio30" name="area" value="宁"/>宁</label>
                     <label class="radioBtn" for="sradio31">
-                        <input type="radio" id="sradio31" name="area" />新</label>
+                        <input type="radio" id="sradio31" name="area" value="新"/>新</label>
                 </fieldset>
             </div>
             <div id="Abc" class="">
                 <fieldset>
                     <label class="radioBtn active" for="aradio1">
-                        <input type="radio" id="aradio1" name="abc" />A</label>
+                        <input type="radio" id="aradio1" name="abc" value="A"/>A</label>
                     <label class="radioBtn" for="aradio2">
-                        <input type="radio" id="aradio2" name="abc" />B</label>
+                        <input type="radio" id="aradio2" name="abc" value="B"/>B</label>
                     <label class="radioBtn" for="aradio3">
-                        <input type="radio" id="aradio3" name="abc" />C</label>
+                        <input type="radio" id="aradio3" name="abc" value="C"/>C</label>
                     <label class="radioBtn" for="aradio4">
-                        <input type="radio" id="aradio4" name="abc" />D</label>
+                        <input type="radio" id="aradio4" name="abc" value="D"/>D</label>
                     <label class="radioBtn" for="aradio5">
-                        <input type="radio" id="aradio5" name="abc" />E</label>
+                        <input type="radio" id="aradio5" name="abc" value="E"/>E</label>
                     <label class="radioBtn" for="aradio6">
-                        <input type="radio" id="aradio6" name="abc" />F</label>
+                        <input type="radio" id="aradio6" name="abc" value="F"/>F</label>
                     <label class="radioBtn" for="aradio7">
-                        <input type="radio" id="aradio7" name="abc" />G</label>
+                        <input type="radio" id="aradio7" name="abc" value="G"/>G</label>
                     <label class="radioBtn" for="aradio8">
-                        <input type="radio" id="aradio8" name="abc" />H</label>
+                        <input type="radio" id="aradio8" name="abc" value="H"/>H</label>
                     <label class="radioBtn" for="aradio9">
-                        <input type="radio" id="aradio9" name="abc" />I</label>
+                        <input type="radio" id="aradio9" name="abc" value="I"/>I</label>
                     <label class="radioBtn" for="aradio10">
-                        <input type="radio" id="aradio10" name="abc" />J</label>
+                        <input type="radio" id="aradio10" name="abc" value="J"/>J</label>
                     <label class="radioBtn" for="aradio11">
-                        <input type="radio" id="aradio11" name="abc" />K</label>
+                        <input type="radio" id="aradio11" name="abc" value="K"/>K</label>
                     <label class="radioBtn" for="aradio12">
-                        <input type="radio" id="aradio12" name="abc" />L</label>
+                        <input type="radio" id="aradio12" name="abc" value="L"/>L</label>
                     <label class="radioBtn" for="aradio13">
-                        <input type="radio" id="aradio13" name="abc" />M</label>
+                        <input type="radio" id="aradio13" name="abc" value="M"/>M</label>
                     <label class="radioBtn" for="aradio14">
-                        <input type="radio" id="aradio14" name="abc" />N</label>
+                        <input type="radio" id="aradio14" name="abc" value="N"/>N</label>
                     <label class="radioBtn" for="aradio15">
-                        <input type="radio" id="aradio15" name="abc" />O</label>
+                        <input type="radio" id="aradio15" name="abc" value="O"/>O</label>
                     <label class="radioBtn" for="aradio16">
-                        <input type="radio" id="aradio16" name="abc" />P</label>
+                        <input type="radio" id="aradio16" name="abc" value="P"/>P</label>
                     <label class="radioBtn" for="aradio17">
-                        <input type="radio" id="aradio17" name="abc" />Q</label>
+                        <input type="radio" id="aradio17" name="abc" value="Q"/>Q</label>
                     <label class="radioBtn" for="aradio18">
-                        <input type="radio" id="aradio18" name="abc" />R</label>
+                        <input type="radio" id="aradio18" name="abc" value="R"/>R</label>
                     <label class="radioBtn" for="aradio19">
-                        <input type="radio" id="aradio19" name="abc" />S</label>
+                        <input type="radio" id="aradio19" name="abc" value="S"/>S</label>
                     <label class="radioBtn" for="aradio20">
-                        <input type="radio" id="aradio20" name="abc" />T</label>
+                        <input type="radio" id="aradio20" name="abc" value="T"/>T</label>
                     <label class="radioBtn" for="aradio21">
-                        <input type="radio" id="aradio21" name="abc" />U</label>
+                        <input type="radio" id="aradio21" name="abc" value="U"/>U</label>
                     <label class="radioBtn" for="aradio22">
-                        <input type="radio" id="aradio22" name="abc" />V</label>
+                        <input type="radio" id="aradio22" name="abc" value="V"/>V</label>
                     <label class="radioBtn" for="aradio23">
-                        <input type="radio" id="aradio23" name="abc" />W</label>
+                        <input type="radio" id="aradio23" name="abc" value="W"/>W</label>
                     <label class="radioBtn" for="aradio24">
-                        <input type="radio" id="aradio24" name="abc" />X</label>
+                        <input type="radio" id="aradio24" name="abc" value="X"/>X</label>
                     <label class="radioBtn" for="aradio25">
-                        <input type="radio" id="aradio25" name="abc" />Y</label>
+                        <input type="radio" id="aradio25" name="abc" value="Y"/>Y</label>
                     <label class="radioBtn" for="aradio26">
-                        <input type="radio" id="aradio26" name="abc" />Z</label>
+                        <input type="radio" id="aradio26" name="abc" value="Z"/>Z</label>
                 </fieldset>
             </div>
-            <input id="CarNumber" type="text" name="car-number" maxlength="5">
-            <button id="CarCreate" class="ui button" type="submit">新增</button>
+            <input id="CarNumber" type="text" name="car_number" maxlength="5">
+            <button id="CarCreate" class="ui button" type="submit" >新增</button>
         </div>
     </form>
     <div id="car-licenses"></div>

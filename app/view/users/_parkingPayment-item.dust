@@ -42,7 +42,7 @@
     {:else} 
 
     <div class="item edit">
-        <a href="/couponForPay">
+        <a href="/users/couponForPay">
             <div class="content">
                 <div class="title">
                     用优惠券
@@ -66,8 +66,10 @@
 
     <div class="item">
         <div class="ui checkbox">
-            <input type="checkbox" name="balance">
-            <label class="checkbox-label">使用馀额(当前馀额)<i class="fa fa-jpy"></i>100.0</label>
+            <input type="checkbox" name="balance" id="wallet-use-check">
+            <label class="checkbox-label" id="checkbox-label">
+                使用馀额( 当前馀额: <i class="fa fa-jpy"></i><span id="wallet-remain"></span> )
+            </label>
         </div>
     </div>
 

@@ -22,7 +22,7 @@ exports = module.exports = function(app) {
         scope: ['snsapi_base'],
         authorizationURL: "https://open.weixin.qq.com/connect/oauth2/authorize",
         tokenURL: "https://api.weixin.qq.com/sns/oauth2/access_token",
-        defaultRedirect: "/html/binding.html"
+        defaultRedirect: "/users/signin"
     }, wechatAuth));
 
     app.group('/wechat', function(router) {

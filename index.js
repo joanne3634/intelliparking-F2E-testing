@@ -27,7 +27,7 @@ class Intelliparking extends KoalaPuree {
 	//       .create(lease)
 	// }
     bootstrap() {
-			this.use(require("@eskygo/eskygo-user-passport-strategy"))
+			this.use(require("./lib/eskygoStrategy"))
 		    this.use(function(){
 		      return {
 		        setup: function*(next) {

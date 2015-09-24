@@ -64,7 +64,7 @@ exports = module.exports = function(app) {
                 carlicense: "京A BC123",
                 entranceTimeStamp: "2015/8/21 15:20:00",
                 parkingTime: "1小时12分钟",
-                overTime: true,
+                overTime: false,
                 payment: "20.00",
                 coupon: true,
                 coupon_id: "Af3322",
@@ -156,6 +156,12 @@ exports = module.exports = function(app) {
             }, {
                 dataID: "id2",
                 CarLicenseId: "京B BC123"
+            }]
+        });
+
+        router.get('/wallet-remain', function*(next) {
+            this.body = [{
+                amount: -200
             }]
         });
     });

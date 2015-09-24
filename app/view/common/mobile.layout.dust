@@ -14,9 +14,6 @@
 <meta name="author" content="">
 <title>{+title}eGo停车{/title}</title>
 <script src="//cdn.bootcss.com/script.js/2.5.7/script.min.js"></script>
-<script>
-  $script(['/wechat-view/binding/main.scss.js','/global/stylesheets/dialog.scss.js']);
-</script>
 {+styles}
 {/styles}
 </head>

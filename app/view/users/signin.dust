@@ -2,7 +2,7 @@
 {<title}eGo停车注册{/title}
 {<styles}
 <script>
-    $script(['/users/signin/main.scss.js','/global/stylesheets/dialog.scss.js'])
+    $script(['/users/signin/main.scss.js'])
 </script>
 {/styles}
 {<content}
@@ -16,14 +16,17 @@
         </div>
     </div>
     <!--End of Customs Dialog-->
-    <p class="center">欢迎您, 请填写以下栏位</p>
-    <form id="RegisterForm" class="ui form">
+ {!    <div id="signInLogo"><img src="/images/eGo_Parking_Text_horizontal.png"></div> !}
+    {! <p class="center">欢迎您, 请填写以下栏位</p> !}
+   <div class="errorMsg">{error}</div>
+    <form method="post" action="/users/signin" id="RegisterForm" class="ui form">
+        {#token}<input type="hidden" name="t" value="{token}">{/token}
         <div class="field">
-            <input id="Phone" type="number" name="phone" placeholder="请输入手机号码">
+            <input id="Phone" type="number" name="mobile" placeholder="请输入手机号码">
         </div>
         <div id="ValidateFields" class="fields">
             <div class="validate-code">
-                <input id="ValidateCode" type="text" name="validate-code" placeholder="请输入验证码">
+                <input id="ValidateCode" type="text" name="otp" value="adgjl" placeholder="请输入验证码">
             </div>
             <div class="get-code-field">
                 <button id="GetCode" class="ui button">

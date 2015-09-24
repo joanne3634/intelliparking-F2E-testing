@@ -1,4 +1,5 @@
 define(['jquery'], function($) {
+    
     $('#RegisterForm').on('submit', function(e) {
 
         /* 手机号码錯誤 */
@@ -27,18 +28,10 @@ define(['jquery'], function($) {
             return false;
         }
 
-        /* 車牌已綁定 */
-        // var carLicenseBindingStatus = true;
-
-        // if( carLicenseBindingStatus ){
-        //     ConfirmCarBindingStatus('该车牌号已被其他帐号添加,您可以进行车牌认证以找回','稍後认证','马上认证');
-        //     return false;
-        // }
-
-        var registerStatus = true;
-        if (registerStatus) {
-            //TODO: redirect to wechat-login page 
-        }
+        // TODO [ 註冊成功 | 關注公眾號 ] => 優惠券*1 
+        //      已註冊未綁定 => 綁定 優惠券*1 
+        //      未註冊 => 註冊且綁定 優惠券*2  
+        //      [ 註冊成功 ] => 錢包 +$5 
 
     });
 

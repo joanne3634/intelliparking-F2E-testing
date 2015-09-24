@@ -30,18 +30,6 @@
 </div>
 <div class="item">
     <div class="content">
-        <div class="title">是否預約訂單</div>
-        <div class="value">{?preOrder}是{:else}否{/preOrder}</div>
-    </div>
-</div>
-<div class="item">
-    <div class="content">
-        <div class="title">是否已開收據</div>
-        <div class="value">{?invoice}是{:else}否{/invoice}</div>
-    </div>
-</div>
-<div class="item">
-    <div class="content">
         <div class="title">統計费用</div>
         <div class="value red"><span class="yen">￥</span>{payment}</div>
     </div>

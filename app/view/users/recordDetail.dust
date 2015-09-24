@@ -6,6 +6,7 @@
 </script>
 {/styles}
 {<content}
+	{#hide_data}<input type="hidden" id="data"name="d" value="{hide_data}">{/hide_data}
 	<div id="parkingRecordDetail-list" class="ui relaxed divided list"></div>
 {/content}
 {<js}

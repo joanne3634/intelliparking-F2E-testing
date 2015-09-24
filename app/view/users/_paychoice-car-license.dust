@@ -6,8 +6,8 @@
 {:else}
 	<p>系统检测到您有<span id="CarNumber">{carCount}</span>辆车在停车场中，<br>请选择付费车辆：</p>
 	{#carLicenses} 
-	<a href="pay?carlicenseId={carlicenseId}">
-		<button class="fluid ui button botton-white">{carlicense}</button>
+	<a href="pay?carlicenseId={id}">  
+		<button class="fluid ui button botton-white">{registeredArea} {serial}</button>
 	</a>
 	{/carLicenses}
 {/eq}
