@@ -41,6 +41,25 @@ define(['jquery'], function($) {
     $(document).on('click', "#GetCode", function(e) {
         // TODO : connect API for get validation code 
         // code validation time : 10 min
+           var Phone = document.getElementById('Phone').value;
+
+        if ($.trim(Phone) === "") {
+            Alert('手机不能为空', '好的');
+        } else if (Phone.length !== 11) {
+            Alert('手机号码不能小于11位', '好的');
+        } else if (!/^(1[^012][0-9]{9})$/i.test(Phone)) {
+            Alert('手机号码格式不正确', '好的');
+        }
+            var otpData = {
+                "type": "sms",
+                "target": Phone
+            }
+            console.log(otpData);
+            $.post("/users/otp",otpData).done(function(response) {
+                console.log(response);
+            })
+            
+
         timedCount();
     })
 
@@ -62,6 +81,18 @@ define(['jquery'], function($) {
         setTimeout("document.getElementById('GetCode').innerHTML='获取验证码'", 0);
         clearTimeout(t);
     }
+     function phoneValidate(phone) {
+        if ($.trim(phone) === "") {
+            Alert('手机不能为空', '好的');
+            return false;
+        } else if (phone.length < 11) {
+            Alert('手机号码不能小于11位', '好的');
+            return false;
+        } else if (!/^(1[^012][0-9]{9})$/i.test(phone)) {
+            Alert('手机号码格式不正确', '好的');
+            return false;
+        }
+    }
 
     function Alert(dialog, check) {
         var winW = window.innerWidth;
@@ -73,7 +104,7 @@ define(['jquery'], function($) {
         dialogbox.style.left = (winW / 2) - (280 * .5) + "px";
         dialogbox.style.top = "100px";
         dialogbox.style.display = "block";
-        $('#dialogboxhead').html("eGo提示");
+        $('#dialogboxhead').html("一哥提示");
         $('#dialogboxbody').html(dialog);
         $('#dialogboxfoot').html('<button id="AlertButton" class="ui button alert">' + check + '</button>');
     }
@@ -94,7 +125,7 @@ define(['jquery'], function($) {
         dialogbox.style.top = "100px";
         dialogbox.style.display = "block";
 
-        $('#dialogboxhead').html("eGo提示");
+        $('#dialogboxhead').html("一哥提示");
         $('#dialogboxbody').html(dialog);
         $('#dialogboxfoot').html('<button id="ConfirmLeftButton" class="ui button confirm" >' + left + '</button> <button id="ConfirmRightButton" class="ui button confirm">' + right + '</button>');
     }

@@ -22,7 +22,7 @@ program
                     {
                         "type": "view",
                         "name": "付停车费",
-                        "url": "${baseurl}/wechat/action?toUrl=/users/pay"
+                        "url": "${baseurl}/wechat/action?toUrl=/users/paychoice"
                     },
                     {
                         "name": "个人中心",
@@ -39,11 +39,6 @@ program
                             },
                             {
                                 "type": "view",
-                                "name": "车牌认证",
-                                "url": "${baseurl}/wechat/action?toUrl=/users/carAuth"
-                            },
-                            {
-                                "type": "view",
                                 "name": "停车记录",
                                 "url": "${baseurl}/wechat/action?toUrl=/users/record"
                             }
@@ -51,7 +46,7 @@ program
                     },
                     {
                         "type": "view",
-                        "name": "使用帮助",
+                        "name": "扫一扫",
                         "url": "${baseurl}/users/help"
                     }
                 ]

@@ -5,7 +5,9 @@
     $script(['/users/record/main.scss.js'])
 </script>
 {/styles}
-{<content}{/content}
+{<content}
+<div id="record-container"></div>
+{/content}
 {<js}
     <script>
         $script.ready('bundle', function(){

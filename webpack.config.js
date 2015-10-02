@@ -23,7 +23,6 @@ module.exports = options = {
         filename: "[name]",
         chunkFilename: "[id].js"
     },
-    watch: true,
     module: {
         loaders: [
             {test: /\.dust$/, loader: "dust-loader"},
@@ -36,6 +35,7 @@ module.exports = options = {
             ]
             },
             {test: /\.svg(\#.*)?$/, loader: "url?limit=1"},
+            {test: /\.yml$/, loader: "yaml"},
             {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=1&minetype=application/font-woff"},
             {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=1&minetype=application/font-woff"},
             {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=1&minetype=application/octet-stream"},
@@ -58,7 +58,9 @@ module.exports = options = {
         "lodash": "_",
         "hammerjs": "Hammer",
         "_pt_sp_2": "_pt_sp_2",
-        "$script": "$script"
+        "$script": "$script",
+        "wx": "wx",
+        "jWinxin": "jWeixin"
     }
 };
 var webpack = require('webpack');

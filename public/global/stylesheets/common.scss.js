@@ -47,10 +47,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(7);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(3)(content, {});
+	var update = __webpack_require__(5)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -68,7 +68,9 @@
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ function(module, exports) {
 
 	/*
@@ -124,7 +126,7 @@
 
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -349,15 +351,16 @@
 
 
 /***/ },
-/* 4 */
+/* 6 */,
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(2)();
+	exports = module.exports = __webpack_require__(4)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0 0;\n  padding: 15px;\n  background-color: #ececec; }\n\n.button-green {\n  background-color: #09bb07 !important;\n  color: #fff !important; }\n\ninput {\n  border-radius: 0px !important; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0 0;\n  padding: 15px;\n  background-color: #ebebeb; }\n\n.ui.button.button-green {\n  background-color: #09bb07;\n  color: #fff;\n  width: 100%; }\n\n.ui.button.button-gray {\n  background-color: #999;\n  color: #fff;\n  width: 100%; }\n\ninput {\n  border-radius: 0px !important; }\n\n.used-gray {\n  color: #999; }\n\n.content-red {\n  color: #f00; }\n\n.fa-angle-right {\n  padding-left: 3px;\n  color: #b7b5b5;\n  top: -2px;\n  position: relative; }\n\n.yen {\n  top: 1px;\n  left: 2px;\n  position: relative; }\n\n.minus {\n  top: -1px;\n  position: relative;\n  left: 3px; }\n\n.errorMsg {\n  text-align: center;\n  color: #ff0000; }\n", ""]);
 
 	// exports
 

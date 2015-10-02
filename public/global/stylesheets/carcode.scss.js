@@ -47,10 +47,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(1);
+	var content = __webpack_require__(3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(3)(content, {});
+	var update = __webpack_require__(5)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -67,21 +67,23 @@
 	}
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(2)();
+	exports = module.exports = __webpack_require__(4)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\n/*車牌號碼 Radio Button*/\nfieldset {\n  background-color: #fff; }\n\n.radioBtn {\n  display: inline-block;\n  background-color: #fff;\n  height: 30px;\n  width: 30px;\n  border-radius: 2px;\n  text-align: center;\n  border: 1px solid rgba(39, 41, 43, 0.15);\n  line-height: 30px; }\n\n.radioBtn.active {\n  color: #fff;\n  background-color: #09ba07; }\n\n.radioBtn input[type=radio] {\n  position: absolute;\n  left: -10000px;\n  top: auto;\n  width: 1px;\n  height: 1px;\n  overflow: hidden;\n  /* using accessaid style css to make sure it is not visible but yet usable */ }\n\n#Sheng,\n#Abc {\n  display: none;\n  position: absolute;\n  left: 0;\n  top: 40px;\n  z-index: 2; }\n\n#mask {\n  display: none;\n  position: absolute;\n  width: 100%;\n  /*top:40px;*/\n  /*background-color: #f00;*/\n  /* z-index: 0;*/ }\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\n/*車牌號碼 Radio Button*/\n.ui.form .field {\n  position: relative; }\n\nfieldset {\n  background-color: #fff; }\n\n.radioBtn {\n  margin: 2px;\n  display: inline-block;\n  background-color: #fff;\n  height: 30px;\n  width: 30px;\n  border-radius: 2px;\n  text-align: center;\n  border: 1px solid rgba(39, 41, 43, 0.15);\n  line-height: 30px; }\n\n.radioBtn.active {\n  color: #fff;\n  background-color: #09ba07; }\n\n.radioBtn input[type=radio] {\n  position: absolute;\n  left: -10000px;\n  top: auto;\n  width: 1px;\n  height: 1px;\n  overflow: hidden;\n  /* using accessaid style css to make sure it is not visible but yet usable */ }\n\n#Sheng,\n#Abc {\n  display: none;\n  position: absolute;\n  left: 0;\n  top: 45px; }\n\n#Sheng {\n  z-index: 3; }\n\n#Abc {\n  z-index: 2; }\n\n#mask {\n  display: none;\n  position: absolute;\n  width: 100%;\n  /*top:40px;*/\n  /* z-index: 0;*/ }\n\n.ui.form .fields > .selection.dropdown {\n  max-height: 43px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 2 */
+/* 4 */
 /***/ function(module, exports) {
 
 	/*
@@ -137,7 +139,7 @@
 
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

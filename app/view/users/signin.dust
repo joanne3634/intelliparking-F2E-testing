@@ -1,5 +1,5 @@
 {>"common/mobile.layout.dust"/}
-{<title}eGo停车注册{/title}
+{<title}一哥停车注册{/title}
 {<styles}
 <script>
     $script(['/users/signin/main.scss.js'])
@@ -26,7 +26,8 @@
         </div>
         <div id="ValidateFields" class="fields">
             <div class="validate-code">
-                <input id="ValidateCode" type="text" name="otp" value="adgjl" placeholder="请输入验证码">
+                {! value="adgjl"  !}
+                <input id="ValidateCode" type="text" name="otp" placeholder="请输入验证码">
             </div>
             <div class="get-code-field">
                 <button id="GetCode" class="ui button">

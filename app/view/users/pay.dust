@@ -5,7 +5,12 @@
     $script(['/users/pay/main.scss.js'])
 </script>
 {/styles}
-{<content}{/content}
+{<content}
+{#hide_data}<input type="hidden" id="data" name="d" value="{hide_data}">{/hide_data}
+{#cptid}<input type="hidden" id="cptid" name="cptid" value="{cptid}">{/cptid}
+{#cpiid}<input type="hidden" id="cpiid" name="cpiid" value="{cpiid}">{/cpiid}
+
+{/content}
 {<js}
     <script>
         $script.ready('bundle', function(){

@@ -14,18 +14,18 @@ class Intelliparking extends KoalaPuree {
 	      // }
 	    })
     }
-    // loanJob(path,data, next_run) {
-	//     var lease = {
-	//       job:path,
-	//       data:JSON.stringify(data)
-	//     }
-	//     if ( next_run ) {
-	//       lease.next_run = next_run;
-	//     }
-	//     return this.models
-	//       .Dian13WorkerLease
-	//       .create(lease)
-	// }
+	loanJob(path, data, next_run) {
+		var lease = {
+			job: path,
+			data: JSON.stringify(data)
+		}
+		if (next_run) {
+			lease.next_run = next_run;
+		}
+		return this.models
+			.IPWorkerLease
+			.create(lease)
+	}
     bootstrap() {
 			this.use(require("./lib/eskygoStrategy"))
 		    this.use(function(){

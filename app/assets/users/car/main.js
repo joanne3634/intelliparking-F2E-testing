@@ -67,7 +67,7 @@ define(['jquery'], function($) {
         dialogbox.style.left = (winW / 2) - (280 * .5) + "px";
         dialogbox.style.top = "100px";
         dialogbox.style.display = "block";
-        $('#dialogboxhead').html("eGo提示");
+        $('#dialogboxhead').html("一哥提示");
         $('#dialogboxbody').html(dialog);
         $('#dialogboxfoot').html('<button id="AlertButton" class="normal-close ui button alert">' + check + '</button>');
     }
@@ -82,7 +82,7 @@ define(['jquery'], function($) {
         dialogbox.style.left = (winW / 2) - (280 * .5) + "px";
         dialogbox.style.top = "100px";
         dialogbox.style.display = "block";
-        $('#dialogboxhead').html("eGo提示");
+        $('#dialogboxhead').html("一哥提示");
         $('#dialogboxbody').html(dialog);
         $('#dialogboxfoot').html('<button id="ConfirmLeftButton" class="normal-close ui button confirm" >' + left + '</button> <button id="ConfirmRightButton" class="ui button confirm">' + right + '</button>');
     }
@@ -98,7 +98,7 @@ define(['jquery'], function($) {
         dialogbox.style.top = "100px";
         dialogbox.style.display = "block";
 
-        $('#dialogboxhead').html("eGo提示");
+        $('#dialogboxhead').html("一哥提示");
         $('#dialogboxbody').html(dialog);
         $('#dialogboxfoot').html('<input type="hidden" id="delete_hidden" value="' + id + '"><button id="DeleteConfirmLeftButton" class="ui button confirm" >' + left + '</button> <button id="DeleteConfirmRightButton" class="normal-close ui button confirm">' + right + '</button>');
     }
@@ -107,7 +107,7 @@ define(['jquery'], function($) {
         document.getElementById('dialogoverlay').style.display = "none";
     })
     $(document).on('click', "#ConfirmRightButton", function(e) {
-        document.location = document.location.origin + '/wechat-view/carAuth';
+        document.location = document.location.origin + '/users/carAuth';
         document.getElementById('dialogbox').style.display = "none";
         document.getElementById('dialogoverlay').style.display = "none";
     })

@@ -10,9 +10,11 @@ var WechatReply = require('../../lib/wechat-reply');
 var WechatAuth = require('../../lib/wechat-auth');
 
 exports = module.exports = function(app) {
-    var config = readYaml.sync(require('path').resolve(app._basePath,"./config/wechat.yml"))[app._app.env];
-    var wechatReply = new WechatReply(config.token), wechatAuth = new WechatAuth(app);
+    var config = readYaml.sync(require('path').resolve(app._basePath, "./config/wechat.yml"))[app._app.env];
     var domain = config.domain;
+    var wechatReply = new WechatReply(config.token, domain),
+        wechatAuth = new WechatAuth(app);
+    var wechatApi = new WechatAPI(config.appId, config.appSecret);
 
     app.passport.use(new WechatStrategy({
         app: app,
@@ -29,10 +31,11 @@ exports = module.exports = function(app) {
         router.get('/receive', wechatReply);
         router.post('/receive', wechatReply);
 
-        router.get('/action', app.passport.authenticate('eskygo-wechat'), function * (next) {
+        router.get('/action', app.passport.authenticate('eskygo-wechat'), function*(next) {
             var urlParse = require("url").parse(this.query.toUrl, true);
             this.redirect(require("url").format(urlParse));
         });
+
     });
 
     app.get('/auth/wechat/callback', app.passport.authenticate('eskygo-wechat'));

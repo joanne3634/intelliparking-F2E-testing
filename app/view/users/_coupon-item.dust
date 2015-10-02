@@ -2,16 +2,19 @@
     <a href="#">
         <div class="content">
             <div class="card-img">
-                <img src="/images/{images}">
+                <img src="/images/kuogo_logo.png">
             </div>
-            <div class="header {?usedStatus} used-gray {/usedStatus}">
-                {header}
+            <div class="header {@ne key=status value="claimed"} used-gray {/ne}">
+                {title}
             </div>
-            <div class="description {?usedStatus} used-gray {/usedStatus}">
+            <div class="description {@ne key=status value="claimed"} used-gray {/ne}">
                 {description}
             </div>
-            <div class="meta {?usedStatus} content-red {/usedStatus}">
-                {^usedStatus} 失效時間: {meta} {:else} 已使用 {/usedStatus}
+            <div class="meta {@ne key=status value="claimed"} content-red {/ne}">
+                {! claimed|expired|used  !}
+                {@eq key=status value="claimed"} 失效时间: {expiredAt} {/eq}
+                {@eq key=status value="expired"} 已失效 {/eq}
+                {@eq key=status value="used"} 已使用 {/eq}
             </div>
         </div>
     </a>

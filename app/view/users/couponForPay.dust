@@ -6,9 +6,15 @@
 </script>
 {/styles}
 {<content}
+    {#hide_data}<input type="hidden" id="data" name="d" value="{hide_data}">{/hide_data}
     <div id="payment-coupons-list" class="ui cards">
         <div class="card useless">
-            <a href="#">
+           <a href="#" class="payChoice-link">  
+                <form action="/users/pay" method="post">
+                    {#hide_data}<input type="hidden" name="detail_data" value="{hide_data}">{/hide_data}
+                    <input type="hidden" name="cptid" value="0">
+                    <input type="hidden" name="cpiid" value="0">
+                </form>
                 <div class="content">
                     <div class="useless-meta">
                         不使用优惠券

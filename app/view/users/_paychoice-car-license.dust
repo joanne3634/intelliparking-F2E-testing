@@ -6,8 +6,11 @@
 {:else}
 	<p>系统检测到您有<span id="CarNumber">{carCount}</span>辆车在停车场中，<br>请选择付费车辆：</p>
 	{#carLicenses} 
-	<a href="pay?carlicenseId={id}">  
-		<button class="fluid ui button botton-white">{registeredArea} {serial}</button>
+	<a href="#" class="payChoice-link">  
+		<form action="/users/pay" method="post">
+	        <input type="hidden" name="detail_data" value="{json_data}">
+	    </form>
+		<button class="fluid ui button botton-white">{plate_no}</button>
 	</a>
 	{/carLicenses}
 {/eq}

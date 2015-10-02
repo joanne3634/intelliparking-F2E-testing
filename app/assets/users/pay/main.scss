@@ -9,6 +9,9 @@ body {
     background-color: #fff;
 }
 
+.content{
+    height: 19px;
+}
 .content .title {
     @include span-columns(5);
     @include shift(1);

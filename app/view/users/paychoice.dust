@@ -5,7 +5,32 @@
     $script(['/users/paychoice/main.scss.js'])
 </script>
 {/styles}
-{<content}<div id="payChoiceContent"></div>{/content}
+{<content}
+{! <div id="payChoiceContent"></div> !}
+
+{@eq key=carCount value=0}
+	<p>系统未检测到您有车辆在停车场中，<br>您可以：</p>
+	<a href="car">
+		<button class="fluid ui button botton-white">新增车辆</button>
+	</a>
+{:else}
+	<p>系统检测到您有<span id="CarNumber">{carCount}</span>辆车在停车场中，<br>请选择付费车辆：</p>
+	{#carLicenses} 
+	<a href="#" class="payChoice-link">  
+		<form action="/users/pay" method="post">
+	        <input type="hidden" name="detail_data" value="{json_data}">
+	    </form>
+		<button class="fluid ui button botton-white">{plate_no}</button>
+	</a>
+	{/carLicenses}
+{/eq}
+
+
+
+
+
+
+{/content}
 {<js}
     <script>
         $script.ready('bundle', function(){

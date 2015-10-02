@@ -1,9 +1,9 @@
-<div class="item">
+{! <div class="item">
     <div class="content">
         <div class="title">订单编号</div>
         <div class="value">{parkingRecord_id}</div>
     </div>
-</div>
+</div> !}
 <div class="item">
     <div class="content">
         <div class="title">车牌号码</div>
@@ -24,13 +24,13 @@
 </div>
 <div class="item">
     <div class="content">
-        <div class="title">停車时长</div>
+        <div class="title">停车时长</div>
         <div class="value">{parkingTime}</div>
     </div>
 </div>
 <div class="item">
     <div class="content">
-        <div class="title">統計费用</div>
+        <div class="title">统计费用</div>
         <div class="value red"><span class="yen">￥</span>{payment}</div>
     </div>
 </div>

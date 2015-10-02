@@ -19,7 +19,10 @@
             </div>
             <div id="Sheng" class="">
                 <fieldset>
-                    <label class="radioBtn active" for="sradio1">
+
+                    <label class="radioBtn active" for="sradio12">
+                        <input type="radio" id="sradio12" name="area" value="皖"/>皖</label>
+                    <label class="radioBtn" for="sradio1">
                         <input type="radio" id="sradio1" name="area" value="京"/>京</label>
                     <label class="radioBtn" for="sradio2">
                         <input type="radio" id="sradio2" name="area" value="津"/>津</label>
@@ -41,8 +44,7 @@
                         <input type="radio" id="sradio10" name="area" value="苏"/>苏</label>
                     <label class="radioBtn" for="sradio11">
                         <input type="radio" id="sradio11" name="area" value="浙"/>浙</label>
-                    <label class="radioBtn" for="sradio12">
-                        <input type="radio" id="sradio12" name="area" value="皖"/>皖</label>
+                    
                     <label class="radioBtn" for="sradio13">
                         <input type="radio" id="sradio13" name="area" value="闽"/>闽</label>
                     <label class="radioBtn" for="sradio14">

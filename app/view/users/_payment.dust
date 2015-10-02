@@ -1,17 +1,22 @@
 <div class="card">
-    <a href="#">
+    <a href="#" class="payChoice-link">  
+        <form action="/users/pay" method="post">
+            <input type="hidden" name="detail_data" value="{hide_data}">
+            <input type="hidden" name="cptid" value="{cptid}">
+            <input type="hidden" name="cpiid" value="{cpiid}">
+        </form>
         <div class="content">
             <div class="card-img">
-                <img src="/images/{images}">
+                <img src="/images/kuogo_logo.png">
             </div>
             <div class="header">
-                {header}
+                {title}
             </div>
             <div class="description">
                 {description}
             </div>
             <div class="meta">
-                失效時間: {meta}
+                失效时间: {expiredAt}
             </div>
         </div>
     </a>

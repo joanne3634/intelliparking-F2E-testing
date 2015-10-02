@@ -1,12 +1,19 @@
 define(['jquery'], function($) {
 
     var dust = require('dust');
-    var template = require("users/_coupon-item.dust");
-    
-    $.getJSON('/wechat-view/coupons').success(function(data) {
+
+
+    $.getJSON('/users/coupon').then(function(data) {
+        var template = require("users/_coupon-item.dust");
         data.forEach(function(el) {
-            dust.render('app/view/users/_coupon-item', el, function(err, html) {
-                if (el['usedStatus']) {
+            var insert_data = {
+                title: el.instances[0].title,
+                description: el.instances[0].description,
+                status: el.instances[0].status, //issued|claimed|expired|used 
+                expiredAt: dateTrans(el.instances[0].expiredAt)
+            }
+            dust.render('app/view/users/_coupon-item', insert_data, function(err, html) {
+                if (insert_data['status'] != 'claimed') {
                     $('#coupon-list-history')[0].insertAdjacentHTML('beforeend', html);
                 } else {
                     $('#coupon-list-use')[0].insertAdjacentHTML('beforeend', html);
@@ -14,6 +21,15 @@ define(['jquery'], function($) {
             })
         })
     })
+
+    function dateTrans(expiredAt) {
+        var d = new Date(expiredAt);
+        var year = d.getFullYear();
+        var mon = d.getMonth();
+        var date = d.getDate();
+        var h_m_s = d.toString().split(" ")[4];
+        return year + '/' + mon + '/' + date + ' ' + h_m_s;
+    }
 
     $('#ControlTab0').on('click', function() {
         $("#ControlTab1").removeClass("active");

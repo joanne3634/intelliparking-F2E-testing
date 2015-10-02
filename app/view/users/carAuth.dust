@@ -7,7 +7,10 @@
 {/styles}
 {<content}
     <div id="mask"></div>
-    <p>如果您的车牌被恶意绑定，可以通过上传车牌照片和机动车行驶证照片进行车牌认证。由此给您带来的不便我们由衷地表示歉意。
+    {^feature}
+        <p>功能马上到来。<br>在等待期间，您可以直接在公众号留言，我们会尽快给您答复，感谢您的理解。</p>
+    {:else}
+        <p>如果您的车牌被恶意绑定，可以通过上传车牌照片和机动车行驶证照片进行车牌认证。由此给您带来的不便我们由衷地表示歉意。
     </p>
     <form id="CarCreateForm" name="CarCreateForm" class="ui form">
         <div class="field">
@@ -20,7 +23,9 @@
             </div>
             <div id="Sheng" class="">
                 <fieldset>
-                    <label class="radioBtn active" for="sradio1">
+                    <label class="radioBtn active" for="sradio12">
+                        <input type="radio" id="sradio12" name="area" value="皖"/>皖</label>
+                    <label class="radioBtn" for="sradio1">
                         <input type="radio" id="sradio1" name="area" value="京"/>京</label>
                     <label class="radioBtn" for="sradio2">
                         <input type="radio" id="sradio2" name="area" value="津"/>津</label>
@@ -41,9 +46,7 @@
                     <label class="radioBtn" for="sradio10">
                         <input type="radio" id="sradio10" name="area" value="苏"/>苏</label>
                     <label class="radioBtn" for="sradio11">
-                        <input type="radio" id="sradio11" name="area" value="浙"/>浙</label>
-                    <label class="radioBtn" for="sradio12">
-                        <input type="radio" id="sradio12" name="area" value="皖"/>皖</label>
+                        <input type="radio" id="sradio11" name="area" value="浙"/>浙</label> d
                     <label class="radioBtn" for="sradio13">
                         <input type="radio" id="sradio13" name="area" value="闽"/>闽</label>
                     <label class="radioBtn" for="sradio14">
@@ -168,6 +171,7 @@
             <div id="dialogboxfoot"></div>
         </div>
     </div>
+    {/feature}
 {/content}
 {<js}
     <script>

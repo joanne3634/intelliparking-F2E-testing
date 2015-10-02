@@ -1,0 +1,36 @@
+{>"common/mobile.layout.dust"/}
+{<title}微信QR CODE 扫描例子{/title}
+{<styles}
+{/styles}
+{<content}
+    二维码值:<input id="qrcode" name="qrcode" type="text">
+    <button id="scan">扫描QR</button>
+{/content}
+{<js}
+    <script>
+        $.fn.click = function(listener) {
+            return this.each(function() {
+                var $this = $(this);
+                $this.on('vclick', listener);
+            });
+        };
+        $script.ready('bundle', function(){
+            var wxParam = {wxParam|js|s};
+            console.log(wxParam);
+            wx.config(wxParam);
+            wx.ready(function(){
+                $('#scan').on('click', function(e) {
+                    wx.scanQRCode({
+                        needResult: 1,
+                        scanType: ["qrCode","barCode"],
+                        success: function (res) {
+                            console.log( res );
+                            var result = res.resultStr;
+                            $('#qrcode').val(result);
+                        }
+                    });
+                })
+            });
+        });
+    </script>
+{/js}

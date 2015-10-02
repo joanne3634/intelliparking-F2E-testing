@@ -3,22 +3,29 @@ define(['jquery'], function($) {
     var template = require("users/_record-item.dust");
     $.getJSON('/users/record/list').then(function(data) {
         data.history.forEach(function(el) {
-            var insert_data = {
-            	json_data: JSON.stringify(el),
-                number: el['@rid'],
-                parkingplace: el['parkingLot']['name'],
-                costtime: CostTime(el['departure'], el['arrival']),
-                date: dateTrans(el['arrival']),
-                carlicense: el['plate_no'],
-                feed: '¥' + el['charge']
+            if (el['charge'] != 0) {
+                var insert_data = {
+                    json_data: JSON.stringify(el),
+                    number: el['pid'],
+                    parkingplace: el['parking_lot']['name'],
+                    costtime: CostTime(!el['departure'] ? DateNow() : el['departure'], el['arrival']),
+                    date: dateTrans(el['arrival']),
+                    carlicense: el['plate_no'],
+                    feed: '¥' + intToFloat(el['charge'])
+                }
+                dust.render('app/view/users/_record-item', insert_data, function(err, html) {
+                    $('#record-container')[0].insertAdjacentHTML('beforeend', html);
+                })
             }
-            dust.render('app/view/users/_record-item', insert_data, function(err, html) {
-                $('body')[0].insertAdjacentHTML('beforeend', html);
-            })
         })
+        if ($('#record-container').is(':empty')) {
+            $('#record-container').text('暂无记录 ');
+        }
     })
-    $(document).on('click', "form", function(e) {
-        $(this).submit();
+
+
+    $(document).on('click', ".record-item-container", function(e) {
+        $(this)[0].childNodes[0].submit();
     });
 
     function CostTime(departure, arrival) {
@@ -28,11 +35,21 @@ define(['jquery'], function($) {
         return hour + '小时' + min + '分钟';
     }
 
+    function DateNow() {
+        var d = new Date();
+        d.setTime(d.getTime() + d.getTimezoneOffset() * 60 * 1000);
+        return new Date(d);
+    }
+
     function dateTrans(arrival) {
         var d = new Date(arrival);
         var year = d.getFullYear();
-        var mon = d.getMonth();
+        var mon = d.getMonth() + 1;
         var date = d.getDate();
         return year + '/' + mon + '/' + date;
+    }
+
+    function intToFloat(num) {
+        return (num / 100).toFixed(2);
     }
 });

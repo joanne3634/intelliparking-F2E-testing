@@ -47,10 +47,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(8);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(3)(content, {});
+	var update = __webpack_require__(5)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -68,7 +68,9 @@
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ function(module, exports) {
 
 	/*
@@ -124,7 +126,7 @@
 
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -349,16 +351,17 @@
 
 
 /***/ },
-/* 4 */,
-/* 5 */
+/* 6 */,
+/* 7 */,
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(2)();
+	exports = module.exports = __webpack_require__(4)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "#dialogoverlay {\n  display: none;\n  opacity: .4;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  background: #000;\n  width: 100%;\n  z-index: 10; }\n\n#dialogbox {\n  display: none;\n  position: fixed;\n  background: #fff;\n  border-radius: 15px;\n  width: 280px;\n  z-index: 10; }\n\n#dialogbox > div {\n  background: #FFF;\n  margin: 8px;\n  text-align: center; }\n\n#dialogbox > div > #dialogboxhead {\n  font-size: 19px;\n  padding: 10px; }\n\n#dialogbox > div > #dialogboxbody {\n  text-align: left;\n  padding: 10px;\n  font-size: 14px; }\n\n#dialogbox > div > #dialogboxfoot {\n  padding: 10px;\n  display: flex; }\n\nbutton.ui.button.confirm {\n  width: 50%; }\n\nbutton.ui.button.alert {\n  width: 100%; }\n", ""]);
+	exports.push([module.id, "html {\n  box-sizing: border-box; }\n\n*,\n*::after,\n*::before {\n  box-sizing: inherit; }\n\n#dialogoverlay {\n  display: none;\n  opacity: .4;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  background: #000;\n  width: 100%;\n  z-index: 10; }\n\n#dialogbox {\n  display: none;\n  position: fixed;\n  background: #fff;\n  border-radius: 15px;\n  width: 280px;\n  z-index: 10; }\n\n#dialogbox > div {\n  background: #FFF;\n  margin: 8px;\n  text-align: center; }\n\n#dialogbox > div > #dialogboxhead {\n  font-size: 19px;\n  padding: 10px; }\n\n#dialogbox > div > #dialogboxbody {\n  text-align: left;\n  padding: 10px;\n  font-size: 14px; }\n\n#dialogbox > div > #dialogboxfoot {\n  padding: 10px;\n  display: block;\n  height: 70px; }\n\n.ui.button {\n  color: black;\n  background-color: #ffffff;\n  border-radius: 0.2857rem;\n  border: 1px solid rgba(39, 41, 43, 0.15);\n  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(39, 41, 43, 0.15) inset; }\n\nbutton.ui.button.confirm {\n  float: left;\n  display: block;\n  margin-right: 2.35765%;\n  width: 48.82117%; }\n  button.ui.button.confirm:last-child {\n    margin-right: 0; }\n\nbutton.ui.button.alert {\n  float: left;\n  display: block;\n  margin-right: 2.35765%;\n  width: 100%; }\n  button.ui.button.alert:last-child {\n    margin-right: 0; }\n", ""]);
 
 	// exports
 

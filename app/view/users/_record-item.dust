@@ -1,9 +1,13 @@
-<form action="/users/record/detail" method="post">
-    <input type="hidden" name="detail_data" value="{json_data}">
-    {! <input type="submit"> !}
+{@eq key=recordCount value=0}
+    <p>暂无记录</p>
+{:else}
+<a class="record-item-container" href="#">
+    <form action="/users/record/detail" method="post">
+        <input type="hidden" name="detail_data" value="{json_data}">
+    </form>
     <article>
         <div class="left">
-            <div class="serial-number">编号：<span>{number}</span></div>
+            {! <div class="serial-number">编号：<span>{number}</span></div> !}
             <div class="parkingPlace">{parkingplace}</div>
             <div class="costTime">{costtime}</div>
         </div>
@@ -12,6 +16,6 @@
             <div class="carNumber">{carlicense}</div>
             <div class="costMoney">{feed}</div>
         </div>
-    </article>
-
-</form>
+    </article>  
+</a>
+{/eq}
