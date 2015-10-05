@@ -25,7 +25,7 @@ define(['jquery'], function($) {
     function dateTrans(expiredAt) {
         var d = new Date(expiredAt);
         var year = d.getFullYear();
-        var mon = d.getMonth();
+        var mon = d.getMonth()+1;
         var date = d.getDate();
         var h_m_s = d.toString().split(" ")[4];
         return year + '/' + mon + '/' + date + ' ' + h_m_s;
